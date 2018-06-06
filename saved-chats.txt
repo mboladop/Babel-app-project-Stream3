@@ -138,3 +138,6 @@
 [{'sender': 'mboladop', 'important': None, 'emoji': None, 'time': '13:23', 'body': 'smile baby you look grinning with joy', 'morse': None}]
 [{'sender': 'mboladop', 'important': None, 'emoji': None, 'time': '13:23', 'body': 'smile baby you look grinning with joy', 'morse': None}, {'sender': 'mboladop', 'important': None, 'emoji': 'on', 'time': '13:23', 'body': 'smile baby you look grinning with joy', 'morse': None}]
 [{'sender': 'mboladop', 'important': None, 'emoji': None, 'time': '13:23', 'body': 'smile baby you look grinning with joy', 'morse': None}, {'sender': 'mboladop', 'important': None, 'emoji': 'on', 'time': '13:23', 'body': 'smile baby you look grinning with joy', 'morse': None}, {'sender': 'mboladop', 'important': None, 'emoji': None, 'time': '13:27', 'body': '#hello mello', 'morse': 'on'}]
+[{'body': 'hi', 'time': '11:40', 'sender': 'mboladop', 'important': None}]
+[{'body': 'hi', 'time': '11:40', 'sender': 'mboladop', 'important': None}, {'body': 'a**', 'time': '11:40', 'sender': 'mboladop', 'important': None}]
+[{'body': 'hi', 'time': '11:40', 'sender': 'mboladop', 'important': None}, {'body': 'a**', 'time': '11:40', 'sender': 'mboladop', 'important': None}, {'body': '#hello mello', 'time': '11:40', 'sender': 'mboladop', 'important': 'on'}]

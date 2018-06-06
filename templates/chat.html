@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="../style/style.css" type="text/css" />
+    <title>Document</title>
+</head>
+<body>
+    <h1>You are logged in as: {{ username }} </h1>
+    <form method='POST' action='/{{username}}/new'>
+        <input type="text" name="message" />
+        <input type="submit" value="Submit" />
+        <input type="checkbox" name="important" value="on">Is it important?
+        <input type="checkbox" name="important" value="on">Is it important?
+        <input type="checkbox" name="important" value="on">Is it important?
+    </form>
+
+    {% for message in all_the_messages %} 
+    
+        {% if message.important == 'on' %}
+            <div style=" color:red;">
+                <p> {{ message.time }} </p>
+                <p><strong>{{ message.sender }}</strong>: {{ message.body }}</p>
+            </div>
+        
+        {% else %}
+            <p> {{ message.time }} {{ message.important }}</p>
+            <p><strong>{{ message.sender }}</strong>: {{ message.body }}</p>
+        
+        {% endif %} 
+        
+    {% endfor %}
+</body>
+</html>
