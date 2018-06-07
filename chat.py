@@ -73,6 +73,25 @@ def turn_to_braille(body):
     
 app.jinja_env.globals.update(turn_to_braille = turn_to_braille)
 
+def turn_to_binary(body):
+    
+    with open('features/binary.json') as f:
+        data = json.load(f)
+    
+
+    binary_message = ""
+    
+    for c in body:
+        if c in data:
+           binary_message += data[c] + " "
+        else:
+            binary_message += c
+        
+            
+    return binary_message
+    
+app.jinja_env.globals.update(turn_to_binary=turn_to_binary)
+
 @app.route("/topics/important", )
 def get_important_messages():
     
@@ -116,7 +135,8 @@ def add_message(username):
     morse= request.form.get('morse')
     emoji= request.form.get('emoji')
     braille = request.form.get('braille')
-   
+    binary = request.form.get('binary')
+    
     f = open('profanity.txt', 'r')
     banned_words = f.read().split('\n')                  
     f.close()
@@ -133,6 +153,7 @@ def add_message(username):
         'morse': morse, 
         'emoji': emoji,
         'braille': braille,
+        'binary': binary,
     }
     
     

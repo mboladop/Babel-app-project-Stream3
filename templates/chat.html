@@ -11,71 +11,76 @@
 </head>
 
 <body>
-    <div>
-        
-        <h3 class="col-sm-9 col-sm-offset-1"> You are: @{{ username }}</h3>
-        
-        <form class="form-horizontal" method='POST' action='/{{username}}/new'>
-            <div class="col-sm-12">
-                <div class="form-group form-group-lg msgform">
-                    
-                    
-                    <div class="col-sm-4"><br>
-                        <input class="form-control" type="text" name="message" id="formGroupInputLarge" placeholder="Write :)">
-                        <button type="submit" value="Submit" class="btn btn-success">Send</button>
-                        <input type="checkbox" name="morse"> Say it in Morse code!
-                        <input type="checkbox" name="emoji"> U speak Emoji?
-                        <input type="checkbox" name="braille"> Braille!
-                        <input type="checkbox" name="important"> Is it important?
-                    </div>
+
+
+    <header>
+        <h3> You are: @{{ username }}</h3>
+    </header>
+    <div class="container col-sm-4">
+        <a href="{{url_for('get_important_messages')}}" class="btn btn-danger">Only see Important Msg</a>
+        <a href="{{url_for('get_hashtags')}}" class="btn btn-danger">Only see Hashtag Msg</a>
+    </div>
+    <form class="form-horizontal" method='POST' action='/{{username}}/new'>
+        <div class="col-sm-6">
+            <div class="form-group form-group-lg msgform">
+                <div class="col-sm-8"><br>
+                    <input class="form-control" type="text" name="message" id="formGroupInputLarge" placeholder="Write :)">
+                    <button type="submit" value="Submit" class="btn btn-success">Send</button>
+                    <input type="checkbox" name="morse"> Say it in Morse code!
+                    <input type="checkbox" name="emoji"> U speak Emoji?
+                    <input type="checkbox" name="braille"> Braille!
+                    <input type="checkbox" name="binary"> Freak out the coders!
+                    <input type="checkbox" name="important"> Is it important?
                 </div>
             </div>
-        </form>
-    </div>
+        </div>
+    </form>
+
 
     <div id="message-display">
-        
-        {% for message in all_the_messages %} 
-        
-        {% if message.morse == 'on' %}
+
+        {% for message in all_the_messages %} {% if message.morse == 'on' %}
         <div style=" color:pink;">
             <p> {{ message.time }} {{ message.morse }} </p>
             <p><strong>{{ message.sender }}</strong>: {{ turn_to_morse(message.body) }}</p>
         </div>
-        
+
         {% elif message.emoji == 'on' %}
         <div style=" color:green;">
             <p> {{ message.time }} {{ message.emoji }} </p>
             <p><strong>{{ message.sender }}</strong>: {{ turn_to_emoji(message.body) }}</p>
         </div>
-        
+
         {% elif message.braille == 'on' %}
         <div style="color:blue;">
             <p> {{ message.time }} {{ message.braille }} </p>
             <p><strong>{{ message.sender }}</strong>: {{ turn_to_braille(message.body) }}</p>
         </div>
+
+        {% elif message.binary == 'on' %}
+        <div style="color:blue;">
+            <p> {{ message.time }} {{ message.binary }} </p>
+            <p><strong>{{ message.sender }}</strong>: {{ turn_to_binary(message.body) }}</p>
+        </div>
         
         {% elif message.important == 'on' %}
-        <div style="color:red;">
+        <div style="color:red; font: bold;">
             <p> {{ message.time }} {{ message.important }} </p>
             <p><strong>{{ message.sender }}</strong>: {{ message.body }}</p>
         </div>
-        
+
         {% else %}
-            <p> {{ message.time }} </p>
-            <p><strong>{{ message.sender }}</strong>: {{ message.body }}</p>
-        
-        {% endif %} 
-        
-        {% endfor %}
+        <p> {{ message.time }} </p>
+        <p><strong>{{ message.sender }}</strong>: {{ message.body }}</p>
+
+        {% endif %} {% endfor %}
 
     </div>
-    
-    <div class="dispbutton col-sm-4">
-        <a href="{{url_for('get_important_messages')}}" class="btn btn-danger">Only see Important Msg</a>
-        <a href="{{url_for('get_hashtags')}}" class="btn btn-danger">Only see Hashtag Msg</a>
-    </div>
-    
+
+    <footer>
+        <p>here footer</p>
+    </footer>
+
 </body>
 
 </html>
