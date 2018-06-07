@@ -17,26 +17,6 @@ def get_login():
     username = request.form.get('username')
     return redirect(username)
     
-
-def turn_to_emoji(body):
-    
-    with open('features/emoji.json') as f:
-        data = json.load(f)
-
-    words = body.lower().split(" ")
-    emoji_message = ""
-    
-    for word in words:
-        if word in data:
-            emoji_message += ' ' + data[word]
-        else:
-            emoji_message += ' ' + word
-    
-    return emoji_message
-
-app.jinja_env.globals.update(turn_to_emoji=turn_to_emoji)
-
-
 def turn_to_morse(body):
     
     with open('features/morse-code.json') as f:
@@ -55,6 +35,43 @@ def turn_to_morse(body):
     return morse_message
     
 app.jinja_env.globals.update(turn_to_morse=turn_to_morse)
+
+def turn_to_emoji(body):
+    
+    with open('features/emoji.json') as f:
+        data = json.load(f)
+
+    words = body.lower().split(" ")
+    emoji_message = ""
+    
+    for word in words:
+        if word in data:
+            emoji_message += ' ' + data[word]
+        else:
+            emoji_message += ' ' + word
+    
+    return emoji_message
+
+app.jinja_env.globals.update(turn_to_emoji = turn_to_emoji)
+
+def turn_to_braille(body):
+    
+    with open('features/braille.json') as f:
+        data = json.load(f)
+    
+    bodylow = body.lower()
+    braille_message = ""
+    
+    for c in bodylow:
+        if c in data:
+           braille_message += data[c]
+        else:
+            braille_message += c
+        
+            
+    return braille_message
+    
+app.jinja_env.globals.update(turn_to_braille = turn_to_braille)
 
 @app.route("/topics/important", )
 def get_important_messages():
@@ -98,7 +115,7 @@ def add_message(username):
     important = request.form.get('important')
     morse= request.form.get('morse')
     emoji= request.form.get('emoji')
-
+    braille = request.form.get('braille')
    
     f = open('profanity.txt', 'r')
     banned_words = f.read().split('\n')                  
@@ -114,7 +131,8 @@ def add_message(username):
         'time': datetime.datetime.now().strftime("%H:%M"),
         'important': important,
         'morse': morse, 
-        'emoji': emoji
+        'emoji': emoji,
+        'braille': braille,
     }
     
     
