@@ -15,6 +15,26 @@ def get_index():
 def get_login():
     username = request.form.get('username')
     return redirect(username)
+    
+def turn_to_morse(body):
+    
+    with open('morse-code.json') as f:
+        data = json.load(f)
+    
+
+    morse_message = ""
+    
+    for c in body:
+        if c in data:
+           morse_message += data[c]
+        else:
+            morse_message += c
+        
+            
+    return morse_message
+    
+app.jinja_env.globals.update(turn_to_morse=turn_to_morse)
+
 
 @app.route("/topics/important", )
 def get_important_messages():
