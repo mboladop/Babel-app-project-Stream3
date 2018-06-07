@@ -18,7 +18,7 @@ def get_login():
     
 def turn_to_morse(body):
     
-    with open('morse-code.json') as f:
+    with open('features/morse-code.json') as f:
         data = json.load(f)
     
 
@@ -76,7 +76,9 @@ def get_username(username):
 def add_message(username):
     text = request.form.get('message')
     box = request.form.get('important')
-   
+    morse= request.form.get('morse')
+    
+    
     f = open('profanity.txt', 'r')
     banned_words = f.read().split('\n')                  
     f.close()
@@ -89,7 +91,8 @@ def add_message(username):
         'sender': username,
         'body': text,
         'time': datetime.datetime.now().strftime("%H:%M"),
-        'important': box
+        'important': box,
+        'morse': morse,
     }
     
     
