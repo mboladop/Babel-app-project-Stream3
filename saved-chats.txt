@@ -7,3 +7,5 @@
 [{'sender': 'mboladop', 'important': None, 'time': '08:29', 'body': 'hi'}, {'sender': 'mboladop', 'important': None, 'time': '08:29', 'body': '#hello mello'}]
 [{'sender': 'mboladop', 'important': None, 'time': '08:29', 'body': 'hi'}, {'sender': 'mboladop', 'important': None, 'time': '08:29', 'body': '#hello mello'}, {'sender': 'mboladop', 'important': None, 'time': '08:29', 'body': '#hello'}]
 [{'sender': 'mboladop', 'important': None, 'time': '08:29', 'body': 'hi'}, {'sender': 'mboladop', 'important': None, 'time': '08:29', 'body': '#hello mello'}, {'sender': 'mboladop', 'important': None, 'time': '08:29', 'body': '#hello'}, {'sender': 'mboladop', 'important': 'on', 'time': '08:30', 'body': 'a**'}]
+[{'important': None, 'sender': 'mboladop', 'time': '08:46', 'body': 'hi'}]
+[{'important': None, 'sender': 'mboladop', 'time': '08:46', 'body': 'hi'}, {'important': None, 'sender': 'mboladop', 'time': '08:46', 'body': 'hi'}]

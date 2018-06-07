@@ -18,8 +18,8 @@
                 <div class="col-sm-10">
                     <input class="form-control" type="text" name="message" id="formGroupInputLarge" placeholder="Large input">
                     <button type="submit" value="Submit" class="btn btn-success">Send</button>
-                    <button type="button" class="btn btn-info">Say it in Morse code!</button>
-                    <button type="button" class="btn btn-warning">U speak Emoji?</button>
+                    <input type="checkbox" name="morse"> Say it in Morse code!
+                    <input type="checkbox" name="emoji"> U speak Emoji?
                     <input type="checkbox" name="important"> Is it important?
                 </div>
             </div>
@@ -28,16 +28,27 @@
     
     <div id="message-display">
         
-        {% for message in all_the_messages %} {% if message.important == 'on' %}
+        {% for message in all_the_messages %} 
+        
+        {% if message.morse == 'on' %}
+        <div style=" color:pink;">
+            <p> {{ message.time }} {{ message.morse }} </p>
+            <p><strong>{{ message.sender }}</strong>: {{ turn_to_morse(message.body) }}</p>
+        </div>
+        
+        {% elif message.important == 'on' %}
         <div style=" color:red;">
             <p> {{ message.time }} {{ message.important }} </p>
             <p><strong>{{ message.sender }}</strong>: {{ message.body }}</p>
         </div>
-
+        
         {% else %}
-        <p> {{ message.time }} {{ message.important }}</p>
-        <p><strong>{{ message.sender }}</strong>: {{ message.body }}</p>
-        {% endif %} {% endfor %}
+            <p> {{ message.time }} </p>
+            <p><strong>{{ message.sender }}</strong>: {{ message.body }}</p>
+        
+        {% endif %} 
+        
+        {% endfor %}
     </div>
 
     <a href="{{url_for('get_important_messages')}}" class="btn btn-danger">Only Important</a>

@@ -7,7 +7,6 @@ app = Flask(__name__)
 
 messages=[]
 
-
 @app.route('/')
 def get_index():
     return render_template('index.html')
