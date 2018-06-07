@@ -6,17 +6,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-    <link rel="stylesheet" href="../style/style.css" type="text/css" />
+    <link rel="stylesheet" href="../static/style.css" type="text/css" />
     <title>Document</title>
 </head>
 
 <body>
     <div>
-        <h3>You are logged in as: @{{ username }} </h3>
+        <h3>You are logged in as: @{{ username }}</h3>
         <form class="form-horizontal" method='POST' action='/{{username}}/new'>
-            <div class="form-group form-group-lg">
-                <label class="col-sm-2 control-label" for="formGroupInputLarge">Type your message: </label>
-                <div class="col-sm-10">
+            <div class="form-group form-group-lg msgform">
+                <label class="col-sm-2 control-label" for="formGroupInputLarge">Your Message: </label>
+                <div class="col-sm-4">
                     <input class="form-control" type="text" name="message" id="formGroupInputLarge" placeholder="Large input">
                     <button type="submit" value="Submit" class="btn btn-success">Send</button>
                     <input type="checkbox" name="morse"> Say it in Morse code!
