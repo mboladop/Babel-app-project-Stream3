@@ -7,6 +7,7 @@ app = Flask(__name__)
 
 messages=[]
 
+
 @app.route('/')
 def get_index():
     return render_template('index.html')
@@ -16,6 +17,26 @@ def get_login():
     username = request.form.get('username')
     return redirect(username)
     
+
+def turn_to_emoji(body):
+    
+    with open('features/emoji.json') as f:
+        data = json.load(f)
+
+    words = body.split(" ")
+    emoji_message = ""
+    
+    for word in words:
+        if word in data:
+            emoji_message += ' ' + data[word]
+        else:
+            emoji_message += ' ' + word
+    
+    return emoji_message
+
+app.jinja_env.globals.update(turn_to_emoji=turn_to_emoji)
+
+
 def turn_to_morse(body):
     
     with open('features/morse-code.json') as f:
@@ -35,7 +56,6 @@ def turn_to_morse(body):
     
 app.jinja_env.globals.update(turn_to_morse=turn_to_morse)
 
-
 @app.route("/topics/important", )
 def get_important_messages():
     
@@ -46,7 +66,7 @@ def get_important_messages():
             important_messages.append(message)
     
     return render_template('chat.html', all_the_messages = important_messages)
-
+    
 @app.route("/topics/hashtag")
 def get_hashtags():
     
@@ -75,10 +95,11 @@ def get_username(username):
 @app.route('/<username>/new', methods=['POST'])
 def add_message(username):
     text = request.form.get('message')
-    box = request.form.get('important')
+    important = request.form.get('important')
     morse= request.form.get('morse')
-    
-    
+    emoji= request.form.get('emoji')
+
+   
     f = open('profanity.txt', 'r')
     banned_words = f.read().split('\n')                  
     f.close()
@@ -91,8 +112,9 @@ def add_message(username):
         'sender': username,
         'body': text,
         'time': datetime.datetime.now().strftime("%H:%M"),
-        'important': box,
-        'morse': morse,
+        'important': important,
+        'morse': morse, 
+        'emoji': emoji
     }
     
     
@@ -103,7 +125,8 @@ def add_message(username):
     
     return redirect(username)
     
-    #return 'Hello' + ' ' + username + ': ' + message
+    
     
 if __name__ == '__main__':
     app.run(host=os.getenv('IP', '0.0.0.0'), port=int(os.getenv('PORT', 8080)), debug=True)
+
