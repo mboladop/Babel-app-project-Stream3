@@ -1,2 +1,5 @@
 [{'body': 'a**', 'important': 'on', 'sender': 'mboladop', 'time': '11:43'}]
 [{'body': 'a**', 'important': 'on', 'sender': 'mboladop', 'time': '11:43'}, {'body': '#hello mello', 'important': None, 'sender': 'mboladop', 'time': '11:43'}]
+[{'sender': 'mboladop', 'body': 'hi', 'time': '08:14', 'important': 'on'}]
+[{'sender': 'mboladop', 'body': 'hi', 'time': '08:14', 'important': 'on'}, {'sender': 'mboladop', 'body': '#hello mello', 'time': '08:14', 'important': None}]
+[{'sender': 'mboladop', 'body': 'hi', 'time': '08:14', 'important': 'on'}, {'sender': 'mboladop', 'body': '#hello mello', 'time': '08:14', 'important': None}, {'sender': 'mboladop', 'body': '#hello', 'time': '08:14', 'important': None}]

@@ -17,7 +17,7 @@ def get_login():
     return redirect(username)
 
 @app.route("/topics/important")
-def get_important(important_messages):
+def get_important_messages(important_messages):
     
     important_messages = []
     
