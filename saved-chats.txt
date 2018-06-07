@@ -3,3 +3,7 @@
 [{'sender': 'mboladop', 'body': 'hi', 'time': '08:14', 'important': 'on'}]
 [{'sender': 'mboladop', 'body': 'hi', 'time': '08:14', 'important': 'on'}, {'sender': 'mboladop', 'body': '#hello mello', 'time': '08:14', 'important': None}]
 [{'sender': 'mboladop', 'body': 'hi', 'time': '08:14', 'important': 'on'}, {'sender': 'mboladop', 'body': '#hello mello', 'time': '08:14', 'important': None}, {'sender': 'mboladop', 'body': '#hello', 'time': '08:14', 'important': None}]
+[{'sender': 'mboladop', 'important': None, 'time': '08:29', 'body': 'hi'}]
+[{'sender': 'mboladop', 'important': None, 'time': '08:29', 'body': 'hi'}, {'sender': 'mboladop', 'important': None, 'time': '08:29', 'body': '#hello mello'}]
+[{'sender': 'mboladop', 'important': None, 'time': '08:29', 'body': 'hi'}, {'sender': 'mboladop', 'important': None, 'time': '08:29', 'body': '#hello mello'}, {'sender': 'mboladop', 'important': None, 'time': '08:29', 'body': '#hello'}]
+[{'sender': 'mboladop', 'important': None, 'time': '08:29', 'body': 'hi'}, {'sender': 'mboladop', 'important': None, 'time': '08:29', 'body': '#hello mello'}, {'sender': 'mboladop', 'important': None, 'time': '08:29', 'body': '#hello'}, {'sender': 'mboladop', 'important': 'on', 'time': '08:30', 'body': 'a**'}]

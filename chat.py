@@ -16,28 +16,28 @@ def get_login():
     username = request.form.get('username')
     return redirect(username)
 
-@app.route("/topics/important")
-def get_important_messages(important_messages):
+@app.route("/topics/important", )
+def get_important_messages():
     
     important_messages = []
     
     for message in messages:
-        if ('#'+ hashtag) in message["body"]:
-            chosen_hashtag.append(message)
+        if (message['important'] == 'on'):
+            important_messages.append(message)
     
-    
-    return render_template('chat.html', all_the_messages= chosen_hashtag)
-@app.route("/topics/<hashtag>")
-def get_hashtags(hashtag):
+    return render_template('chat.html', all_the_messages = important_messages)
+
+@app.route("/topics/hashtag")
+def get_hashtags():
     
     chosen_hashtag = []
     
     for message in messages:
-        if ('#'+ hashtag) in message["body"]:
+        if ('#') in message["body"]:
             chosen_hashtag.append(message)
     
     
-    return render_template('chat.html', all_the_messages= chosen_hashtag)
+    return render_template('chat.html', all_the_messages = chosen_hashtag)
 
 @app.route('/<username>')
 def get_username(username):
