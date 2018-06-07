@@ -23,7 +23,7 @@ def turn_to_emoji(body):
     with open('features/emoji.json') as f:
         data = json.load(f)
 
-    words = body.split(" ")
+    words = body.lower().split(" ")
     emoji_message = ""
     
     for word in words:
