@@ -12,6 +12,13 @@ body {
 .container {
 }
 
+#msginput{
+    
+}
+
+#features{
+    
+}
 #message-display{
    text-align: right;
    margin-right: 5em;
@@ -20,5 +27,9 @@ body {
 }
 
 header {
+    margin-left: 5em;
+}
+
+.bunch{
     margin-left: 5em;
 }

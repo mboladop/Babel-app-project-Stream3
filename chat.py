@@ -1,11 +1,14 @@
 import os
 import datetime
 from flask import Flask , redirect, render_template, request
+from pymongo import MongoClient
 import json
+
+MONGODB_URI = os.environ.get("MONGODB_URI")
+MONGODB_NAME = os.environ.get("MONGODB_NAME")
 
 app = Flask(__name__)
 
-messages=[]
 
 
 @app.route('/')
@@ -95,6 +98,8 @@ app.jinja_env.globals.update(turn_to_binary=turn_to_binary)
 @app.route("/topics/important", )
 def get_important_messages():
     
+    messages = load_messages()
+    
     important_messages = []
     
     for message in messages:
@@ -106,6 +111,7 @@ def get_important_messages():
 @app.route("/topics/hashtag")
 def get_hashtags():
     
+    messages = load_messages()
     chosen_hashtag = []
     
     for message in messages:
@@ -118,6 +124,7 @@ def get_hashtags():
 @app.route('/<username>')
 def get_username(username):
     
+    messages = load_messages()
     visible_messages=[]
     
     for message in messages:
@@ -130,13 +137,14 @@ def get_username(username):
             
 @app.route('/<username>/new', methods=['POST'])
 def add_message(username):
+    
     text = request.form.get('message')
     important = request.form.get('important')
     morse= request.form.get('morse')
     emoji= request.form.get('emoji')
     braille = request.form.get('braille')
     binary = request.form.get('binary')
-    
+
     f = open('profanity.txt', 'r')
     banned_words = f.read().split('\n')                  
     f.close()
@@ -144,7 +152,8 @@ def add_message(username):
     words =[word[0]+('*' * (len(word)-1)) if word.lower() in banned_words else word for word in words] 
     
     text= ' '.join(words)
-            
+    
+
     message = {
         'sender': username,
         'body': text,
@@ -156,16 +165,24 @@ def add_message(username):
         'binary': binary,
     }
     
-    
-    messages.append(message)
-    f = open("saved-chats.txt", "a")  
-    lines = f.write(str(messages)+"\n")
-    f.close()                                      
-    
+    save_to_mongo(message)
+     
     return redirect(username)
-    
-    
-    
+
+def save_to_mongo(message):
+    with MongoClient(MONGODB_URI) as conn:
+       db = conn[MONGODB_NAME]
+       coll = db["chat-messages"]
+       coll.insert(message)
+        
+def load_messages():
+    with MongoClient(MONGODB_URI) as conn:
+        db = conn[MONGODB_NAME]
+        coll = db["chat-messages"]
+        messages = coll.find()
+        return messages
+
+  
 if __name__ == '__main__':
     app.run(host=os.getenv('IP', '0.0.0.0'), port=int(os.getenv('PORT', 8080)), debug=True)
-
+ 

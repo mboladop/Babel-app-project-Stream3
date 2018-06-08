@@ -12,30 +12,44 @@
 
 <body>
 
-
     <header>
-        <h3> You are: @{{ username }}</h3>
+        <h3> You are: @{{ username }} </h3>
     </header>
-    <div class="container col-sm-4">
-        <a href="{{url_for('get_important_messages')}}" class="btn btn-danger">Only see Important Msg</a>
-        <a href="{{url_for('get_hashtags')}}" class="btn btn-danger">Only see Hashtag Msg</a>
+    <div class="bunch">
+    <div id="displays" class="container">
+        <div class="row">
+            <div class="col-sm-4">
+                <a href="{{url_for('get_important_messages')}}" class="btn btn-danger"> Only see Important Msg</a>
+                <a href="{{url_for('get_hashtags')}}" class="btn btn-danger"> Only see Hashtag Msg</a>
+            </div>
+        </div>
     </div>
+
     <form class="form-horizontal" method='POST' action='/{{username}}/new'>
-        <div class="col-sm-6">
-            <div class="form-group form-group-lg msgform">
-                <div class="col-sm-8"><br>
+
+        <div id="msginput" class="container">
+            <div class="row">
+                <div class="col-sm-5">
                     <input class="form-control" type="text" name="message" id="formGroupInputLarge" placeholder="Write :)">
                     <button type="submit" value="Submit" class="btn btn-success">Send</button>
-                    <input type="checkbox" name="morse"> Say it in Morse code!
-                    <input type="checkbox" name="emoji"> U speak Emoji?
-                    <input type="checkbox" name="braille"> Braille!
-                    <input type="checkbox" name="binary"> Freak out the coders!
-                    <input type="checkbox" name="important"> Is it important?
                 </div>
             </div>
         </div>
-    </form>
 
+        <div id="features" class="container">
+            <div class="row">
+                <div class="col-sm-2">
+                    <input type="checkbox" name="morse"> Say it in Morse code! <br>
+                    <input type="checkbox" name="emoji"> U speak Emoji? <br>
+                    <input type="checkbox" name="braille"> Braille! <br>
+                    <input type="checkbox" name="binary"> Freak out the coders! <br>
+                    <input type="checkbox" name="important"> Is it important? <br>
+                </div>
+            </div>
+        </div>
+
+    </form>
+    </div>
 
     <div id="message-display">
 
@@ -45,7 +59,7 @@
             <p><strong>{{ message.sender }}</strong>: {{ turn_to_morse(message.body) }}</p>
         </div>
 
-        {% elif message.emoji == 'on' %}
+        {% elif message.type == 'on' %}
         <div style=" color:green;">
             <p> {{ message.time }} {{ message.emoji }} </p>
             <p><strong>{{ message.sender }}</strong>: {{ turn_to_emoji(message.body) }}</p>
@@ -62,7 +76,7 @@
             <p> {{ message.time }} {{ message.binary }} </p>
             <p><strong>{{ message.sender }}</strong>: {{ turn_to_binary(message.body) }}</p>
         </div>
-        
+
         {% elif message.important == 'on' %}
         <div style="color:red; font: bold;">
             <p> {{ message.time }} {{ message.important }} </p>
