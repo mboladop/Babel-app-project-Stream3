@@ -8,12 +8,32 @@
     <link rel="stylesheet" href="../static/style.css" type="text/css" />
     <title>Document</title>
 </head>
-<body>
-    <header><h1>Chat App</h1></header>
-    <form method='POST' action="/login">
-        <input type="text" name="username"/>
-        <input type="submit"/>
-    </form>
-    <footer></footer>
+<body id='body_index'>
+
+    <header>
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-5 col-sm-offset-3">
+                    <h1>Welcome to Babel</h1>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-5 col-sm-offset-3">
+                <form id="userform" method='POST' action="/login">
+                    <h4>Please, choose a Username!</h4>
+                    <input type="text" name="username"/>
+                    <input type="submit"/>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+
+    </footer>
 </body>
 </html>
