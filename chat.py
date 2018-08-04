@@ -9,8 +9,6 @@ MONGODB_NAME = os.environ.get("MONGODB_NAME")
 
 app = Flask(__name__)
 
-
-
 @app.route('/')
 def get_index():
     return render_template('index.html')

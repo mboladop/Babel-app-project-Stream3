@@ -1,22 +1,10 @@
 #body_index {
     background-color: #FEE9E1;
     font-family: 'Raleway', sans-serif !important;
+    margin: 0;
 }
 
-.msgform {
-    
-}
 
-.container {
-}
-
-#msginput{
-    
-}
-
-#features{
-    
-}
 #message-display{
    text-align: right;
    margin-right: 5em;
@@ -24,20 +12,21 @@
    margin-top: 5em;
 }
 
-header {
-    margin-left: 5em;
-}
 
 .bunch{
     margin-left: 5em;
 }
 
-h1{
+#user_login_t{
     margin-top: 20px;
     font-size: 50px;
     color: #605754;
     font-family: 'Raleway', sans-serif !important;
-    
+    text-align: center;
+}
+header{
+    margin: 0px;
+   
 }
 #userform{
     color: #605754;
