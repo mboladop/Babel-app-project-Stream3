@@ -31,7 +31,7 @@ This website uses **Python3** as primary language and **Flask** as the framework
     - We use **Bootstrap** to give the project a simple, responsive layout.
 - [Google Fonts](http://googlefonts.com/)
     - We use **Google Fonts** to give our project the fonts.
-- [Mongo Database](http://googlefonts.com/)
+- [Mongo Database](https://www.mongodb.com/)
     - We use **MongoDB** to store the chats.
 
 ## Testing
