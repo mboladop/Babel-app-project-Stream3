@@ -13,6 +13,11 @@
  
 This website uses **Python3** as primary language and **Flask** as the framework to route viewers through the site. The site is styled with **Bootstrap**, **css3** and **Google Fonts**. The chat data is stored in a **MongoDB**. 
 
+## UX
+
+![WIREFRAME Desktop Demo](https://raw.githubusercontent.com/mboladop/Babel-app-project-Stream3/master/wireframes/desktop.jpg "Desktop Demo")
+![WIREFRAME Mobile Demo](https://raw.githubusercontent.com/mboladop/Babel-app-project-Stream3/master/wireframes/mobile.jpg "Mobile Demo")
+
 
 ## Features
  
