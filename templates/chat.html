@@ -33,13 +33,13 @@
                     <div id="message_display">
         
                         {% for message in all_the_messages %} {% if message.morse == 'on' %}
-                        <div style=" color:pink;">
+                        <div style="color:pink;">
                             <p> {{ message.time }} {{ message.morse }} </p>
                             <p><strong>{{ message.sender }}</strong>: {{ turn_to_morse(message.body) }}</p>
                         </div>
                 
                         {% elif message.type == 'on' %}
-                        <div style=" color:green;">
+                        <div style="color:green;">
                             <p> {{ message.time }} {{ message.emoji }} </p>
                             <p><strong>{{ message.sender }}</strong>: {{ turn_to_emoji(message.body) }}</p>
                         </div>
@@ -67,6 +67,13 @@
                         <p><strong>{{ message.sender }}</strong>: {{ message.body }}</p>
                 
                         {% endif %} {% endfor %}
+
+                        {% for message in all_the_messages %}{% if message.sender == username %}
+                            <div style="text-align: right;">
+                                    <p> {{ message.time }} {{ message.morse }} </p>
+                                    <p><strong>{{ message.sender }}</strong>: {{ (message.body) }}</p>
+                            </div>
+                        {% endif %} {% endfor %} 
                     
                     </div>
         
