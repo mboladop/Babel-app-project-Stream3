@@ -18,60 +18,60 @@
         <div class="row">
             <div id= 'usernames' class="col-sm-3">
                 
-                <h3> You are: @{{ username }} </h3>
+                <h3> User: @{{ username }} </h3>
 
-                {% for user in users %} 
-                <p><h4>{{ user }}</h4></p>
-                {% endfor %}           
+                <div id="users" >
+                    {% for user in users %} 
+                    <p><h4><img id='user' src="../static/avatar.png" alt="avatar" width="50px"> {{ user }}</h4></p>
+                    {% endfor %}         
+                </div>
+                 
             </div>
             
             <div class="col-sm-9">
                 <div id= 'imp_buttons'  class="row">
-                    
                         <a href="{{url_for('get_important_messages')}}" class="btn btn-danger">IMPORTANT</a>
                         <a href="{{url_for('get_hashtags')}}" class="btn btn-danger">HASHTAGS</a>
-                    
                 </div>
+
                 <div id= 'conversation' class="row">
                     <div id="message_display">
-        
                         {% for message in all_the_messages %} 
-                        
                             {% if message.sender == username %}  
                                 {% if message.morse == 'on' %}
                                 <div style="color:rgb(212, 72, 196); text-align: right; padding-right: 15px;">
-                                    <p> {{ message.time }} {{ message.morse }} </p>
-                                    <p><strong>{{ message.sender }}</strong>: {{ turn_to_morse(message.body) }}</p>
+                                    <p> {{ message.time }} {{ message.morse }} <strong>{{ message.sender }}</strong>:</p>
+                                    <p>{{ turn_to_morse(message.body) }}</p>
                                 </div>
                         
                                 {% elif message.type == 'on' %}
                                 <div style="color:#8D9EC6; text-align: right; padding-right: 15px;">
-                                    <p> {{ message.time }} {{ message.emoji }} </p>
-                                    <p><strong>{{ message.sender }}</strong>: {{ turn_to_emoji(message.body) }}</p>
+                                    <p> {{ message.time }} {{ message.emoji }} <strong>{{ message.sender }}</strong>:</p>
+                                    <p>{{ turn_to_emoji(message.body) }}</p>
                                 </div>
                         
                                 {% elif message.braille == 'on' %}
                                 <div style="color:#32E87F; text-align: right; padding-right: 15px;">
-                                    <p> {{ message.time }} {{ message.braille }} </p>
-                                    <p><strong>{{ message.sender }}</strong>: {{ turn_to_braille(message.body) }}</p>
+                                    <p> {{ message.time }} {{ message.braille }} <strong>{{ message.sender }}</strong>:</p>
+                                    <p>{{ turn_to_braille(message.body) }}</p>
                                 </div>
                         
                                 {% elif message.binary == 'on' %}
                                 <div style="color:#51D6FF; text-align: right; padding-right: 15px;">
-                                    <p> {{ message.time }} {{ message.binary }} </p>
-                                    <p><strong>{{ message.sender }}</strong>: {{ turn_to_binary(message.body) }}</p>
+                                    <p> {{ message.time }} {{ message.binary }} <strong>{{ message.sender }}</strong>:</p>
+                                    <p>{{ turn_to_binary(message.body) }}</p>
                                 </div>
                         
                                 {% elif message.important == 'on' %}
                                 <div style="color:red; font: bold; text-align: right; padding-right: 15px;">
-                                    <p> {{ message.time }} {{ message.important }} </p>
-                                    <p><strong>{{ message.sender }}</strong>: {{ message.body }}</p>
+                                    <p> {{ message.time }} {{ message.important }} <strong>{{ message.sender }}</strong>:</p>
+                                    <p>{{ message.body }}</p>
                                 </div>
                                 
                                 {% else  %}
                                 <div style=" text-align: right; padding-right: 15px;">
-                                    <p> {{ message.time }} {{ message.important }} </p>
-                                    <p><strong>{{ message.sender }}</strong>: {{ message.body }}</p>
+                                    <p> {{ message.time }} {{ message.important }} <strong>{{ message.sender }}</strong>:</p>
+                                    <p>{{ message.body }}</p>
                                 </div>
                                 {% endif %}
                         
@@ -79,60 +79,57 @@
             
                                 {% if message.morse == 'on' %}
                                 <div style="color:rgb(212, 72, 196);">
-                                    <p> {{ message.time }} {{ message.morse }} </p>
-                                    <p><strong>{{ message.sender }}</strong>: {{ turn_to_morse(message.body) }}</p>
+                                    <p> {{ message.time }} {{ message.morse }} <strong>{{ message.sender }}</strong>:</p>
+                                    <p> {{ turn_to_morse(message.body) }}</p>
                                 </div>
                         
                                 {% elif message.type == 'on' %}
                                 <div style="color:#8D9EC6;">
-                                    <p> {{ message.time }} {{ message.emoji }} </p>
-                                    <p><strong>{{ message.sender }}</strong>: {{ turn_to_emoji(message.body) }}</p>
+                                    <p> {{ message.time }} {{ message.emoji }}<strong>{{ message.sender }}</strong>:</p>
+                                    <p> {{ turn_to_emoji(message.body) }}</p>
                                 </div>
                         
                                 {% elif message.braille == 'on' %}
                                 <div style="color:#32E87F;">
-                                    <p> {{ message.time }} {{ message.braille }} </p>
-                                    <p><strong>{{ message.sender }}</strong>: {{ turn_to_braille(message.body) }}</p>
+                                    <p> {{ message.time }} {{ message.braille }} <strong>{{ message.sender }}</strong>:</p>
+                                    <p>{{ turn_to_braille(message.body) }}</p>
                                 </div>
                         
                                 {% elif message.binary == 'on' %}
                                 <div style="color:#51D6FF;">
-                                    <p> {{ message.time }} {{ message.binary }} </p>
-                                    <p><strong>{{ message.sender }}</strong>: {{ turn_to_binary(message.body) }}</p>
+                                    <p> {{ message.time }} {{ message.binary }} <strong>{{ message.sender }}</strong>:</p>
+                                    <p>{{ turn_to_binary(message.body) }}</p>
                                 </div>
                         
                                 {% elif message.important == 'on' %}
                                 <div style="color:red; font: bold;">
-                                    <p> {{ message.time }} {{ message.important }} </p>
-                                    <p><strong>{{ message.sender }}</strong>: {{ message.body }}</p>
+                                    <p> {{ message.time }} {{ message.important }} <strong>{{ message.sender }}</strong>:</p>
+                                    <p>{{ message.body }}</p>
                                 </div>
 
                                 {% else  %}
                                 <div>
-                                    <p> {{ message.time }} {{ message.important }} </p>
-                                    <p><strong>{{ message.sender }}</strong>: {{ message.body }}</p>
+                                    <p> {{ message.time }} {{ message.important }} <strong>{{ message.sender }}</strong>:</p>
+                                    <p>{{ message.body }}</p>
                                 </div>
                                 {% endif %}
-                
-                             
                             {% endif %} 
                         {% endfor %}
-                    
                     </div>
-        
                 </div>
             
                 <div id= 'input'  class="row">
-                    <div id="features">
-                        <div class="row">
-                            <input class='language_icons' type="checkbox" name="morse"> Say it in Morse code!
-                            <input class='language_icons' type="checkbox" name="emoji"> U speak Emoji? 
-                            <input class='language_icons' type="checkbox" name="braille"> Braille! 
-                            <input class='language_icons' type="checkbox" name="binary"> Freak out the coders! 
-                            <input class='language_icons' type="checkbox" name="important"> Is it important? 
-                        </div>
-                    </div>
+                    
                     <form class="form-horizontal" method='POST' action='/{{username}}/new'>
+                        <div id="features">
+                            <div class="row">
+                                <input class='language_icons' type="checkbox" name="morse"> Say it in Morse code!
+                                <input class='language_icons' type="checkbox" name="emoji"> U speak Emoji? 
+                                <input class='language_icons' type="checkbox" name="braille"> Braille! 
+                                <input class='language_icons' type="checkbox" name="binary"> Freak out the coders! 
+                                <input class='language_icons' type="checkbox" name="important"> Is it important? 
+                            </div>
+                        </div>
                         <div id="msginput">
                             <div class="row">
                                 <div class="col-sm-11 write">

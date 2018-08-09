@@ -29,17 +29,30 @@ h3{
 }
 #chat{
     width: 79vw;
-    margin: 0px;
-    
+    margin: 0px;   
 }
 #conversation{
     width: 80vw;
 }
-
+h4{
+    background: #FAD3C9;
+    color: #664751;
+    text-align: left;
+    border-radius: 3%;
+    padding: 10px;
+}
+#users{
+    letter-spacing: 2px;
+    margin-left: 30px;
+    margin-right: 30px;
+    margin-top: 100px;
+}
 #usernames{
     background: #664751;
     height: 100vh;
     color: #FAD3C9;
+    overflow-y: scroll;
+    max-height: 100vh;
 }
 #message_display{
     overflow-y: scroll;

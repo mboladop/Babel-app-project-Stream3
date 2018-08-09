@@ -126,8 +126,6 @@ def get_username(username):
     visible_messages=[]
     users=[]
     
-    
-    
     for message in messages:
         if message['sender'] not in users:
             users.append( message['sender'])
@@ -136,7 +134,6 @@ def get_username(username):
         
     return render_template('chat.html', username=username, all_the_messages=visible_messages, users=users)
 
-   
                 
 @app.route('/<username>/new', methods=['POST'])
 def add_message(username):
@@ -156,7 +153,6 @@ def add_message(username):
     
     text= ' '.join(words)
     
-
     message = {
         'sender': username,
         'body': text,
@@ -168,6 +164,7 @@ def add_message(username):
         'binary': binary,
     }
     
+    save_to_mongo(message)
     return redirect(username)
 
 def save_to_mongo(message):
