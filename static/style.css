@@ -29,6 +29,9 @@ header{
     margin: 0px;
     
 }
+#conversation{
+    width: 80vw;
+}
 
 #usernames{
     background: #664751;
@@ -38,17 +41,17 @@ header{
 #message_display{
     overflow-y: scroll;
     max-height: 84.5vh;
-    max-width: 76vw;
-    margin: 0px;
+    max-width: 80vw;
+    margin: 15px;
 }
 #imp_buttons{
     text-align: right;
-    width: 81.5vw;
+    width: 80vw;
 }
 #input{
     border-top: 1px solid #AB8C91;
     background: #B0D0D3;
-    width: 81.5vw;
+    width: 80vw;
     text-align: center;
     height: 11.5vh;
     padding-top: 10px;
@@ -56,7 +59,6 @@ header{
 #msginput{
     padding-left: 15px;
     margin: 0;
-    
     width: 100%;
 }
 .write{
