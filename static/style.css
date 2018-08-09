@@ -43,20 +43,68 @@ header{
 }
 #imp_buttons{
     text-align: right;
-    width: 80.5vw;
+    width: 81.5vw;
 }
 #input{
     border-top: 1px solid #AB8C91;
     background: #B0D0D3;
-    width: 80.5vw;
-    text-align: right;
-    padding: 20px;
+    width: 81.5vw;
+    text-align: center;
+    height: 11.5vh;
+    padding-top: 10px;
 }
 #msginput{
     padding-left: 15px;
-    width: 70vw;
+    margin: 0;
+    
+    width: 100%;
+}
+.write{
+    padding-right:0;
+}
+.send{
+    padding:0;
+    text-align: left;
 }
 #features{
     margin-right: 20px;
 }
+
 /*------------------------------- END OF CHAT HTML --------------------------------*/
+
+
+input.language_icons {
+  position: relative;
+  margin: 0 10px;
+  border-radius: 20px;
+  background: #664751;
+  outline: 0;
+  -webkit-appearance: none;
+  cursor: pointer;
+}
+
+input.language_icons::after {
+  content: '';
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  display: block;
+  width: calc((100% - 4px) / 2);
+  height: calc(100% - 4px);
+  border-radius: 50%;
+  background: #FAD3C9;
+  transition: all .1s linear;
+}
+
+input.language_icons:checked {
+  background: #FFF;
+}
+
+input.language_icons:checked::after {
+  transform: translateX(100%);
+}
+input.language_icons:nth-child(1) { width: 24px; height: 14px; }
+input.language_icons:nth-child(2) { width: 24px; height: 14px; }
+input.language_icons:nth-child(3) { width: 24px; height: 14px; }
+input.language_icons:nth-child(4) { width: 24px; height: 14px; }
+input.language_icons:nth-child(5) { width: 24px; height: 14px; }
