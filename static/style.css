@@ -25,19 +25,38 @@ header{
 
 /*----------------------------------- CHAT HTML -----------------------------------*/
 #chat{
-    width: 100vw;
+    width: 79vw;
     margin: 0px;
+    
 }
+
 #usernames{
-    background: blue;
+    background: #664751;
     height: 100vh;
+    color: #FAD3C9;
 }
 #message_display{
     overflow-y: scroll;
-    max-height: 80vh;
+    max-height: 84.5vh;
+    max-width: 76vw;
+    margin: 0px;
 }
 #imp_buttons{
     text-align: right;
+    width: 80.5vw;
 }
-
+#input{
+    border-top: 1px solid #AB8C91;
+    background: #B0D0D3;
+    width: 80.5vw;
+    text-align: right;
+    padding: 20px;
+}
+#msginput{
+    padding-left: 15px;
+    width: 70vw;
+}
+#features{
+    margin-right: 20px;
+}
 /*------------------------------- END OF CHAT HTML --------------------------------*/

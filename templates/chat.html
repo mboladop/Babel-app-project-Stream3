@@ -24,13 +24,12 @@
             
             <div class="col-sm-9">
                 <div id= 'imp_buttons'  class="row">
-                    <div class="col-sm-12">
+                    
                         <a href="{{url_for('get_important_messages')}}" class="btn btn-danger">IMPORTANT</a>
                         <a href="{{url_for('get_hashtags')}}" class="btn btn-danger"> ## HASHTAGS ##</a>
-                    </div>
+                    
                 </div>
                 <div id= 'chat' class="row">
-        
                     <div id="message_display">
         
                         {% for message in all_the_messages %} {% if message.morse == 'on' %}
@@ -75,22 +74,24 @@
             
                 <div id= 'input'  class="row">
                     <form class="form-horizontal" method='POST' action='/{{username}}/new'>
-                        <div id="msginput" class="container">
-                            <div class="row"></div>
-                                    <input class="form-control" type="text" name="message" id="formGroupInputLarge" placeholder="Write :)">
+                        <div id="msginput">
+                            <div class="row">
+                                <div class="col-sm-11 write">
+                                    <input class="form-control" type="text" name="message" id="formGroupInputLarge" placeholder="Write your message! :)">
+                                </div>
+                                <div class="col-sm-1 send">    
                                     <button type="submit" value="Submit" class="btn btn-success">Send</button>
+                                </div>
                             </div>
                         </div>
                     
-                        <div id="features" class="container">
+                        <div id="features">
                             <div class="row">
-                                <div class="col-sm-2">
-                                    <input type="checkbox" name="morse"> Say it in Morse code! <br>
-                                    <input type="checkbox" name="emoji"> U speak Emoji? <br>
-                                    <input type="checkbox" name="braille"> Braille! <br>
-                                    <input type="checkbox" name="binary"> Freak out the coders! <br>
-                                    <input type="checkbox" name="important"> Is it important? <br>
-                                </div>
+                                    <input type="checkbox" name="morse"> Say it in Morse code! 
+                                    <input type="checkbox" name="emoji"> U speak Emoji? 
+                                    <input type="checkbox" name="braille"> Braille! 
+                                    <input type="checkbox" name="binary"> Freak out the coders! 
+                                    <input type="checkbox" name="important"> Is it important? 
                             </div>
                         </div>
                     </form>
