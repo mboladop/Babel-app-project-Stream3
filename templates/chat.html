@@ -18,17 +18,18 @@
         <div class="row">
             <div id= 'usernames' class="col-sm-3">
                 
-                    <h3> You are: @{{ username }} </h3>
+                <h3> You are: @{{ username }} </h3>
 
-                    
-                
+                {% for user in users %} 
+                <p><h4>{{ user }}</h4></p>
+                {% endfor %}           
             </div>
             
             <div class="col-sm-9">
                 <div id= 'imp_buttons'  class="row">
                     
                         <a href="{{url_for('get_important_messages')}}" class="btn btn-danger">IMPORTANT</a>
-                        <a href="{{url_for('get_hashtags')}}" class="btn btn-danger"> ## HASHTAGS ##</a>
+                        <a href="{{url_for('get_hashtags')}}" class="btn btn-danger">HASHTAGS</a>
                     
                 </div>
                 <div id= 'conversation' class="row">
@@ -38,25 +39,25 @@
                         
                             {% if message.sender == username %}  
                                 {% if message.morse == 'on' %}
-                                <div style="color:pink; text-align: right; padding-right: 15px;">
+                                <div style="color:rgb(212, 72, 196); text-align: right; padding-right: 15px;">
                                     <p> {{ message.time }} {{ message.morse }} </p>
                                     <p><strong>{{ message.sender }}</strong>: {{ turn_to_morse(message.body) }}</p>
                                 </div>
                         
                                 {% elif message.type == 'on' %}
-                                <div style="color:green; text-align: right; padding-right: 15px;">
+                                <div style="color:#8D9EC6; text-align: right; padding-right: 15px;">
                                     <p> {{ message.time }} {{ message.emoji }} </p>
                                     <p><strong>{{ message.sender }}</strong>: {{ turn_to_emoji(message.body) }}</p>
                                 </div>
                         
                                 {% elif message.braille == 'on' %}
-                                <div style="color:blue; text-align: right; padding-right: 15px;">
+                                <div style="color:#32E87F; text-align: right; padding-right: 15px;">
                                     <p> {{ message.time }} {{ message.braille }} </p>
                                     <p><strong>{{ message.sender }}</strong>: {{ turn_to_braille(message.body) }}</p>
                                 </div>
                         
                                 {% elif message.binary == 'on' %}
-                                <div style="color:blue; text-align: right; padding-right: 15px;">
+                                <div style="color:#51D6FF; text-align: right; padding-right: 15px;">
                                     <p> {{ message.time }} {{ message.binary }} </p>
                                     <p><strong>{{ message.sender }}</strong>: {{ turn_to_binary(message.body) }}</p>
                                 </div>
@@ -77,25 +78,25 @@
                             {% elif message.sender != username %}
             
                                 {% if message.morse == 'on' %}
-                                <div style="color:pink;">
+                                <div style="color:rgb(212, 72, 196);">
                                     <p> {{ message.time }} {{ message.morse }} </p>
                                     <p><strong>{{ message.sender }}</strong>: {{ turn_to_morse(message.body) }}</p>
                                 </div>
                         
                                 {% elif message.type == 'on' %}
-                                <div style="color:green;">
+                                <div style="color:#8D9EC6;">
                                     <p> {{ message.time }} {{ message.emoji }} </p>
                                     <p><strong>{{ message.sender }}</strong>: {{ turn_to_emoji(message.body) }}</p>
                                 </div>
                         
                                 {% elif message.braille == 'on' %}
-                                <div style="color:blue;">
+                                <div style="color:#32E87F;">
                                     <p> {{ message.time }} {{ message.braille }} </p>
                                     <p><strong>{{ message.sender }}</strong>: {{ turn_to_braille(message.body) }}</p>
                                 </div>
                         
                                 {% elif message.binary == 'on' %}
-                                <div style="color:blue;">
+                                <div style="color:#51D6FF;">
                                     <p> {{ message.time }} {{ message.binary }} </p>
                                     <p><strong>{{ message.sender }}</strong>: {{ turn_to_binary(message.body) }}</p>
                                 </div>
@@ -147,95 +148,6 @@
             </div>
         </div>
     </div>
-        
-   
-   
-    <!-- <header>
-        <h3> You are: @{{ username }} </h3>
-    </header>
-
-    <div class="main_input_form">
-    
-        <div id="displays" class="container">
-        <div class="row">
-            <div class="col-sm-4">
-                <a href="{{url_for('get_important_messages')}}" class="btn btn-danger"> Only see Important Msg</a>
-                <a href="{{url_for('get_hashtags')}}" class="btn btn-danger"> Only see Hashtag Msg</a>
-            </div>
-        </div>
-    </div>
-
-    <form class="form-horizontal" method='POST' action='/{{username}}/new'>
-
-        <div id="msginput" class="container">
-            <div class="row">
-                <div class="col-sm-5">
-                    <input class="form-control" type="text" name="message" id="formGroupInputLarge" placeholder="Write :)">
-                    <button type="submit" value="Submit" class="btn btn-success">Send</button>
-                </div>
-            </div>
-        </div>
-
-        <div id="features" class="container">
-            <div class="row">
-                <div class="col-sm-2">
-                    <input type="checkbox" name="morse"> Say it in Morse code! <br>
-                    <input type="checkbox" name="emoji"> U speak Emoji? <br>
-                    <input type="checkbox" name="braille"> Braille! <br>
-                    <input type="checkbox" name="binary"> Freak out the coders! <br>
-                    <input type="checkbox" name="important"> Is it important? <br>
-                </div>
-            </div>
-        </div>
-
-    </form>
-    
-    </div>
-
-    <div id="message-display">
-
-        {% for message in all_the_messages %} {% if message.morse == 'on' %}
-        <div style=" color:pink;">
-            <p> {{ message.time }} {{ message.morse }} </p>
-            <p><strong>{{ message.sender }}</strong>: {{ turn_to_morse(message.body) }}</p>
-        </div>
-
-        {% elif message.type == 'on' %}
-        <div style=" color:green;">
-            <p> {{ message.time }} {{ message.emoji }} </p>
-            <p><strong>{{ message.sender }}</strong>: {{ turn_to_emoji(message.body) }}</p>
-        </div>
-
-        {% elif message.braille == 'on' %}
-        <div style="color:blue;">
-            <p> {{ message.time }} {{ message.braille }} </p>
-            <p><strong>{{ message.sender }}</strong>: {{ turn_to_braille(message.body) }}</p>
-        </div>
-
-        {% elif message.binary == 'on' %}
-        <div style="color:blue;">
-            <p> {{ message.time }} {{ message.binary }} </p>
-            <p><strong>{{ message.sender }}</strong>: {{ turn_to_binary(message.body) }}</p>
-        </div>
-
-        {% elif message.important == 'on' %}
-        <div style="color:red; font: bold;">
-            <p> {{ message.time }} {{ message.important }} </p>
-            <p><strong>{{ message.sender }}</strong>: {{ message.body }}</p>
-        </div>
-
-        {% else %}
-        <p> {{ message.time }} </p>
-        <p><strong>{{ message.sender }}</strong>: {{ message.body }}</p>
-
-        {% endif %} {% endfor %}
-
-    </div>
-
-    <footer>
-        <p>here footer</p>
-    </footer> -->
-
 </body>
 
 </html>

@@ -24,6 +24,9 @@ header{
 /*-------------------------------- END OF INDEX HTML --------------------------------*/
 
 /*----------------------------------- CHAT HTML -----------------------------------*/
+h3{
+    letter-spacing: 5px;
+}
 #chat{
     width: 79vw;
     margin: 0px;
@@ -40,13 +43,22 @@ header{
 }
 #message_display{
     overflow-y: scroll;
-    max-height: 84.5vh;
+    max-height: 80.8vh;
     max-width: 80vw;
     margin: 15px;
 }
 #imp_buttons{
+    background: #B0D0D3;
     text-align: right;
     width: 80vw;
+    border-bottom: 1px solid #AB8C91;
+}
+.btn.btn-danger{
+    background: #664751 !important;
+    color: #FAD3C9 !important;
+    letter-spacing: 5px;
+    border-color: red;
+   
 }
 #input{
     border-top: 1px solid #AB8C91;

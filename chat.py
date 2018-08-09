@@ -124,15 +124,20 @@ def get_username(username):
     
     messages = load_messages()
     visible_messages=[]
+    users=[]
+    
+    
     
     for message in messages:
+        if message['sender'] not in users:
+            users.append( message['sender'])
         if message['body'].startswith("@"+ username) or not message['body'].startswith("@") or (message['sender'] == username):
             visible_messages.append(message)
         
-    return render_template('chat.html', username=username, all_the_messages=visible_messages)
+    return render_template('chat.html', username=username, all_the_messages=visible_messages, users=users)
 
-       
-            
+   
+                
 @app.route('/<username>/new', methods=['POST'])
 def add_message(username):
     
@@ -163,8 +168,6 @@ def add_message(username):
         'binary': binary,
     }
     
-    save_to_mongo(message)
-     
     return redirect(username)
 
 def save_to_mongo(message):
@@ -179,8 +182,7 @@ def load_messages():
         coll = db["chat-messages"]
         messages = coll.find()
         return messages
-
-  
+ 
 if __name__ == '__main__':
     app.run(host=os.getenv('IP', '0.0.0.0'), port=int(os.getenv('PORT', 8080)), debug=True)
  
