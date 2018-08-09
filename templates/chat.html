@@ -14,8 +14,94 @@
 </head>
 
 <body>
-
-    <header>
+    <div id='chat' class="container">
+        <div class="row">
+            <div id= 'usernames' class="col-sm-3">
+                
+                    <h3> You are: @{{ username }} </h3>
+                
+            </div>
+            
+            <div class="col-sm-9">
+                <div id= 'imp_buttons'  class="row">
+                    <div class="col-sm-12">
+                        <a href="{{url_for('get_important_messages')}}" class="btn btn-danger">IMPORTANT</a>
+                        <a href="{{url_for('get_hashtags')}}" class="btn btn-danger"> ## HASHTAGS ##</a>
+                    </div>
+                </div>
+                <div id= 'chat' class="row">
+        
+                    <div id="message_display">
+        
+                        {% for message in all_the_messages %} {% if message.morse == 'on' %}
+                        <div style=" color:pink;">
+                            <p> {{ message.time }} {{ message.morse }} </p>
+                            <p><strong>{{ message.sender }}</strong>: {{ turn_to_morse(message.body) }}</p>
+                        </div>
+                
+                        {% elif message.type == 'on' %}
+                        <div style=" color:green;">
+                            <p> {{ message.time }} {{ message.emoji }} </p>
+                            <p><strong>{{ message.sender }}</strong>: {{ turn_to_emoji(message.body) }}</p>
+                        </div>
+                
+                        {% elif message.braille == 'on' %}
+                        <div style="color:blue;">
+                            <p> {{ message.time }} {{ message.braille }} </p>
+                            <p><strong>{{ message.sender }}</strong>: {{ turn_to_braille(message.body) }}</p>
+                        </div>
+                
+                        {% elif message.binary == 'on' %}
+                        <div style="color:blue;">
+                            <p> {{ message.time }} {{ message.binary }} </p>
+                            <p><strong>{{ message.sender }}</strong>: {{ turn_to_binary(message.body) }}</p>
+                        </div>
+                
+                        {% elif message.important == 'on' %}
+                        <div style="color:red; font: bold;">
+                            <p> {{ message.time }} {{ message.important }} </p>
+                            <p><strong>{{ message.sender }}</strong>: {{ message.body }}</p>
+                        </div>
+                
+                        {% else %}
+                        <p> {{ message.time }} </p>
+                        <p><strong>{{ message.sender }}</strong>: {{ message.body }}</p>
+                
+                        {% endif %} {% endfor %}
+                    
+                    </div>
+        
+                </div>
+            
+                <div id= 'input'  class="row">
+                    <form class="form-horizontal" method='POST' action='/{{username}}/new'>
+                        <div id="msginput" class="container">
+                            <div class="row"></div>
+                                    <input class="form-control" type="text" name="message" id="formGroupInputLarge" placeholder="Write :)">
+                                    <button type="submit" value="Submit" class="btn btn-success">Send</button>
+                            </div>
+                        </div>
+                    
+                        <div id="features" class="container">
+                            <div class="row">
+                                <div class="col-sm-2">
+                                    <input type="checkbox" name="morse"> Say it in Morse code! <br>
+                                    <input type="checkbox" name="emoji"> U speak Emoji? <br>
+                                    <input type="checkbox" name="braille"> Braille! <br>
+                                    <input type="checkbox" name="binary"> Freak out the coders! <br>
+                                    <input type="checkbox" name="important"> Is it important? <br>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+        
+   
+   
+    <!-- <header>
         <h3> You are: @{{ username }} </h3>
     </header>
 
@@ -99,7 +185,7 @@
 
     <footer>
         <p>here footer</p>
-    </footer>
+    </footer> -->
 
 </body>
 

@@ -1,23 +1,11 @@
+/*------------------------------------INDEX HTML------------------------------------*/
+
 #body_index {
     background-color: #FEE9E1;
     font-family: 'Raleway', sans-serif !important;
     margin: 0;
 }
-
-
-#message-display{
-   text-align: right;
-   margin-right: 5em;
-   margin-left: 80em;
-   margin-top: 5em;
-}
-
-
-.bunch{
-    margin-left: 5em;
-}
-
-#user_login_t{
+#user_login_title{
     margin-top: 20px;
     font-size: 50px;
     color: #605754;
@@ -25,8 +13,7 @@
     text-align: center;
 }
 header{
-    margin: 0px;
-   
+    margin: 0px; 
 }
 #userform{
     color: #605754;
@@ -34,3 +21,23 @@ header{
     text-align: center;
     margin-top: 200px;
 }
+/*-------------------------------- END OF INDEX HTML --------------------------------*/
+
+/*----------------------------------- CHAT HTML -----------------------------------*/
+#chat{
+    width: 100vw;
+    margin: 0px;
+}
+#usernames{
+    background: blue;
+    height: 100vh;
+}
+#message_display{
+    overflow-y: scroll;
+    max-height: 80vh;
+}
+#imp_buttons{
+    text-align: right;
+}
+
+/*------------------------------- END OF CHAT HTML --------------------------------*/
