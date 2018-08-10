@@ -8,7 +8,6 @@
     <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
     <link rel="stylesheet" href="../static/dwcdn/css/bootstrap.min.css">
     <link rel="stylesheet" href="../static/dwcdn/css/bootstrap-theme.min.css">
-    
     <link rel="stylesheet" href="../static/style.css" type="text/css" />
     <title>CHAT</title>
 </head>
@@ -45,7 +44,6 @@
                                 <span id='avatar'>{{users_avatars[message.sender] }}</span>                                        
                             </strong>:                                    
                         </p>  
-                        
                                 {% if message.morse == 'on' %}
                                 <div class='morse'>
                                     <p>{{ turn_to_morse(message.body) }}</p>
@@ -85,7 +83,6 @@
                                     <span id='avatar'>{{users_avatars[message.sender] }}</span>                                        
                                 </strong>:                                    
                             </p>  
-                            
                                 {% if message.morse == 'on' %}
                                 <div class='morse'>
                                     <p> {{ turn_to_morse(message.body) }}</p>
@@ -126,11 +123,11 @@
                     <form class="form-horizontal" method='POST' action='/{{username}}/new'>
                         <div id="features">
                             <div class="row">
-                                <input class='language_icons' type="checkbox" name="morse"> Say it in Morse code!
-                                <input class='language_icons' type="checkbox" name="emoji"> U speak Emoji? 
-                                <input class='language_icons' type="checkbox" name="braille"> Braille! 
-                                <input class='language_icons' type="checkbox" name="binary"> Freak out the coders! 
-                                <input class='language_icons' type="checkbox" name="important"> Is it important? 
+                                <input class='language_icons' type="checkbox" name="morse"> <img src="../static/morse.png" alt="morse"> 
+                                <input class='language_icons' type="checkbox" name="emoji"> <img src="../static/emoji.png" alt="emoji"> 
+                                <input class='language_icons' type="checkbox" name="braille"> <img src="../static/braille.png" alt="braille"> 
+                                <input class='language_icons' type="checkbox" name="binary"> <img src="../static/binary.png" alt="binary"> 
+                                <input class='language_icons' type="checkbox" name="important"> <img src="../static/bomb.png" alt="important"> 
                             </div>
                         </div>
                         
@@ -144,7 +141,7 @@
                             </div>
                     </form>
                 </div>
-                
+
             </div>
         </div>
 </body>

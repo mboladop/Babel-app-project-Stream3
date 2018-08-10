@@ -43,7 +43,8 @@ h4{
     color: #664751;
     text-align: left;
     border-radius: 3%;
-    padding: 10px;
+    padding: 15px;
+    margin-bottom: 30px;
 }
 #users{
     letter-spacing: 2px;
@@ -60,21 +61,19 @@ h4{
 }
 #message_display{
     overflow-y: scroll;
-    max-height: 80.8vh;
-    max-width: 64vw;
+    max-height: 79.6vh;
+    max-width: 74vw;
     margin: 15px;
 }
 .sender_user_no{
     text-align: left !important;
+    font-size: 18px;
 }
 .sender_user_yes{
     text-align: right !important;
     padding-right: 15px;
+    font-size: 18px;
 }
-.morse{
-    color:rgb(212, 72, 196);
-}
-
 #imp_buttons{
     background: #B0D0D3;
     text-align: right;
@@ -112,11 +111,12 @@ h4{
     margin-right: 20px;
 }
 #avatar{
-    background: lightgrey;
+    background: #B0D0D3;
     color: rgb(44, 44, 44);
     border-radius: 100%;
     padding: 5px;
     text-align: center;
+    border: 0.5px rgb(44, 44, 44) dotted;
 }
 /*------------------------------- CUSTOM CHECKBOX ------------------------------*/
 
