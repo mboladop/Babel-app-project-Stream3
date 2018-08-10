@@ -134,8 +134,12 @@ def get_username(username):
             visible_messages.append(message)
     
     for user in users:
-            initials = user[0].upper()
-            avatars.append(initials)
+        initials = user[0].upper()
+        if len(user) >1:
+            initials += user[1].upper()
+       
+        
+        avatars.append(initials)
     
     users_avatars = dict(zip(users, avatars))
         

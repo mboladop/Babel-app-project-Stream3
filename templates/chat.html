@@ -22,7 +22,7 @@
 
                 <div id="users" >
                     {% for key, value in users_avatars.items() %}
-                    <p><h4><span id='avatar'>{{value}}</span> {{key}}</h4></p>
+                    <p><h4><span id='avatar'>{{value}}</span> {{ key}}</h4></p>
                     {% endfor %}
                 </div>
                  
@@ -40,37 +40,84 @@
                             {% if message.sender == username %}  
                                 {% if message.morse == 'on' %}
                                 <div style="color:rgb(212, 72, 196); text-align: right; padding-right: 15px;">
-                                    <p> {{ message.time }} {{ message.morse }} <strong>{{ message.sender }}</strong>:</p>
+                                    <p> {{ message.time }} {{ message.morse }} 
+                                        <strong>  
+                                        {% for key, value in users_avatars.items() %}
+                                        {% if key == message.sender %}
+                                        <span id='avatar'>{{value }}</span>
+                                        {% endif %}
+                                        {% endfor %}
+                                        </strong>:</p>
                                     <p>{{ turn_to_morse(message.body) }}</p>
                                 </div>
                         
                                 {% elif message.emoji == 'on' %}
                                 <div style="color:#8D9EC6; text-align: right; padding-right: 15px;">
-                                    <p> {{ message.time }} {{ message.emoji }} <strong>{{ message.sender }}</strong>:</p>
+                                    <p> {{ message.time }} {{ message.emoji }} 
+                                        <strong>  
+                                        {% for key, value in users_avatars.items() %}
+                                        {% if key == message.sender %}
+                                        <span id='avatar'>{{value }}</span>
+                                        {% endif %}
+                                        {% endfor %}
+                                        </strong>:
+                                    </p>
                                     <p>{{ turn_to_emoji(message.body) }}</p>
                                 </div>
                         
                                 {% elif message.braille == 'on' %}
                                 <div style="color:#32E87F; text-align: right; padding-right: 15px;">
-                                    <p> {{ message.time }} {{ message.braille }} <strong>{{ message.sender }}</strong>:</p>
+                                    <p> {{ message.time }} {{ message.braille }} 
+                                        <strong>  
+                                        {% for key, value in users_avatars.items() %}
+                                        {% if key == message.sender %}
+                                        <span id='avatar'>{{value }}</span>
+                                        {% endif %}
+                                        {% endfor %}
+                                        </strong>:
+                                    </p>
                                     <p>{{ turn_to_braille(message.body) }}</p>
                                 </div>
                         
                                 {% elif message.binary == 'on' %}
                                 <div style="color:#51D6FF; text-align: right; padding-right: 15px;">
-                                    <p> {{ message.time }} {{ message.binary }} <strong>{{ message.sender }}</strong>:</p>
+                                    <p> {{ message.time }} {{ message.binary }}
+                                        <strong>  
+                                        {% for key, value in users_avatars.items() %}
+                                        {% if key == message.sender %}
+                                        <span id='avatar'>{{value }}</span>
+                                        {% endif %}
+                                        {% endfor %}
+                                        </strong>:
+                                    </p>
                                     <p>{{ turn_to_binary(message.body) }}</p>
                                 </div>
                         
                                 {% elif message.important == 'on' %}
                                 <div style="color:red; font: bold; text-align: right; padding-right: 15px;">
-                                    <p> {{ message.time }} {{ message.important }} <strong>{{ message.sender }}</strong>:</p>
+                                    <p> {{ message.time }} {{ message.important }}
+                                        <strong>  
+                                        {% for key, value in users_avatars.items() %}
+                                        {% if key == message.sender %}
+                                        <span id='avatar'>{{value }}</span>
+                                        {% endif %}
+                                        {% endfor %}
+                                        </strong>:
+                                    </p>
                                     <p>{{ message.body }}</p>
                                 </div>
                                 
                                 {% else  %}
                                 <div style=" text-align: right; padding-right: 15px;">
-                                    <p> {{ message.time }} {{ message.important }} <strong>{{ message.sender }}</strong>:</p>
+                                    <p> {{ message.time }} {{ message.important }} 
+                                        <strong>  
+                                        {% for key, value in users_avatars.items() %}
+                                        {% if key == message.sender %}
+                                        <span id='avatar'>{{value }}</span>
+                                        {% endif %}
+                                        {% endfor %}
+                                        </strong>:
+                                    </p>
                                     <p>{{ message.body }}</p>
                                 </div>
                                 {% endif %}
@@ -79,37 +126,85 @@
             
                                 {% if message.morse == 'on' %}
                                 <div style="color:rgb(212, 72, 196);">
-                                    <p> {{ message.time }} {{ message.morse }} <strong>{{ message.sender }}</strong>:</p>
+                                    <p> {{ message.time }} {{ message.morse }} 
+                                        <strong>  
+                                        {% for key, value in users_avatars.items() %}
+                                        {% if key == message.sender %}
+                                        <span id='avatar'>{{value }}</span>
+                                        {% endif %}
+                                        {% endfor %}
+                                        </strong>:
+                                    </p>
                                     <p> {{ turn_to_morse(message.body) }}</p>
                                 </div>
                         
                                 {% elif message.emoji == 'on' %}
                                 <div style="color:#8D9EC6;">
-                                    <p> {{ message.time }} {{ message.emoji }}<strong>{{ message.sender }}</strong>:</p>
+                                    <p> {{ message.time }} {{ message.emoji }}
+                                        <strong>  
+                                        {% for key, value in users_avatars.items() %}
+                                        {% if key == message.sender %}
+                                        <span id='avatar'>{{value }}</span>
+                                        {% endif %}
+                                        {% endfor %}
+                                        </strong>:
+                                    </p>
                                     <p> {{ turn_to_emoji(message.body) }}</p>
                                 </div>
                         
                                 {% elif message.braille == 'on' %}
                                 <div style="color:#32E87F;">
-                                    <p> {{ message.time }} {{ message.braille }} <strong>{{ message.sender }}</strong>:</p>
+                                    <p> {{ message.time }} {{ message.braille }} 
+                                        <strong>  
+                                        {% for key, value in users_avatars.items() %}
+                                        {% if key == message.sender %}
+                                        <span id='avatar'>{{value }}</span>
+                                        {% endif %}
+                                        {% endfor %}
+                                        </strong>:
+                                    </p>
                                     <p>{{ turn_to_braille(message.body) }}</p>
                                 </div>
                         
                                 {% elif message.binary == 'on' %}
                                 <div style="color:#51D6FF;">
-                                    <p> {{ message.time }} {{ message.binary }} <strong>{{ message.sender }}</strong>:</p>
+                                    <p> {{ message.time }} {{ message.binary }} 
+                                        <strong>  
+                                        {% for key, value in users_avatars.items() %}
+                                        {% if key == message.sender %}
+                                        <span id='avatar'>{{value }}</span>
+                                        {% endif %}
+                                        {% endfor %}
+                                        </strong>:
+                                    </p>
                                     <p>{{ turn_to_binary(message.body) }}</p>
                                 </div>
                         
                                 {% elif message.important == 'on' %}
                                 <div style="color:red; font: bold;">
-                                    <p> {{ message.time }} {{ message.important }} <strong>{{ message.sender }}</strong>:</p>
+                                    <p> {{ message.time }} {{ message.important }} 
+                                        <strong>  
+                                    {% for key, value in users_avatars.items() %}
+                                    {% if key == message.sender %}
+                                    <span id='avatar'>{{value }}</span>
+                                    {% endif %}
+                                    {% endfor %}
+                                    </strong>:
+                                    </p>
                                     <p>{{ message.body }}</p>
                                 </div>
 
                                 {% else  %}
                                 <div>
-                                    <p> {{ message.time }} {{ message.important }} <strong>{{ message.sender }}</strong>:</p>
+                                    <p> {{ message.time }} {{ message.important }} 
+                                        <strong>  
+                                        {% for key, value in users_avatars.items() %}
+                                        {% if key == message.sender %}
+                                        <span id='avatar'>{{value }}</span>
+                                        {% endif %}
+                                        {% endfor %}
+                                        </strong>:
+                                    </p>
                                     <p>{{ message.body }}</p>
                                 </div>
                                 {% endif %}
