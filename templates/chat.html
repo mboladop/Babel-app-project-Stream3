@@ -30,148 +30,99 @@
             
             <div class="col-sm-9 chat_part">
                 <div id= 'imp_buttons'  class="row">
-                        <a href="{{url_for('get_important_messages')}}" class="btn btn-danger">IMPORTANT</a>
-                        <a href="{{url_for('get_hashtags')}}" class="btn btn-danger">HASHTAGS</a>
+                    <a href="{{url_for('get_important_messages')}}" class="btn btn-danger">IMPORTANT</a>
+                    <a href="{{url_for('get_hashtags')}}" class="btn btn-danger">HASHTAGS</a>
                 </div>
 
                 <div id= 'conversation' class="row">
                     <div id="message_display">
-                        {% for message in all_the_messages %} 
-                            {% if message.sender == username %}  
+                        {% for message in all_the_messages %}
+                        
+                        {% if message.sender == username %} 
+                        <div class="sender_user_yes">   
+                        <p> {{ message.time }}                                         
+                            <strong>                                              
+                                <span id='avatar'>{{users_avatars[message.sender] }}</span>                                        
+                            </strong>:                                    
+                        </p>  
+                        
                                 {% if message.morse == 'on' %}
-                                <div style="color:rgb(212, 72, 196); text-align: right; padding-right: 15px;">
-                                    <p> {{ message.time }}
-                                        <strong>
-                                            <span id='avatar'>{{users_avatars[message.sender] }}</span>
-                                        </strong>:
-                                    </p>
+                                <div class='morse'>
                                     <p>{{ turn_to_morse(message.body) }}</p>
                                 </div>
                         
                                 {% elif message.emoji == 'on' %}
-                                <div style="color:#8D9EC6; text-align: right; padding-right: 15px;">
-                                    <p> {{ message.time }}
-                                        <strong>  
-                                            <span id='avatar'>{{users_avatars[message.sender] }}</span>
-                                        </strong>:
-                                    </p>
+                                <div class='emoji'>
                                     <p>{{ turn_to_emoji(message.body) }}</p>
                                 </div>
                         
                                 {% elif message.braille == 'on' %}
-                                <div style="color:#32E87F; text-align: right; padding-right: 15px;">
-                                    <p> {{ message.time }}
-                                        <strong>  
-                                            <span id='avatar'>{{users_avatars[message.sender] }}</span>
-                                        </strong>:
-                                    </p>
+                                <div class='braille'>
                                     <p>{{ turn_to_braille(message.body) }}</p>
                                 </div>
                         
                                 {% elif message.binary == 'on' %}
-                                <div style="color:#51D6FF; text-align: right; padding-right: 15px;">
-                                    <p> {{ message.time }}
-                                        <strong>  
-                                            <span id='avatar'>{{users_avatars[message.sender] }}</span>
-                                        </strong>:
-                                    </p>
+                                <div class='binary'>
                                     <p>{{ turn_to_binary(message.body) }}</p>
                                 </div>
                         
                                 {% elif message.important == 'on' %}
-                                <div style="color:red; font: bold; text-align: right; padding-right: 15px;">
-                                    <p> {{ message.time }}
-                                        <strong>  
-                                            <span id='avatar'>{{users_avatars[message.sender] }}</span>
-                                        </strong>:
-                                    </p>
+                                <div class='important'>
                                     <p>{{ message.body }}</p>
                                 </div>
                                 
                                 {% else  %}
-                                <div style=" text-align: right; padding-right: 15px;">
-                                    <p> {{ message.time }} 
-                                        <strong>  
-                                            <span id='avatar'>{{users_avatars[message.sender] }}</span>
-                                        </strong>:
-                                    </p>
+                                <div >
                                     <p>{{ message.body }}</p>
                                 </div>
                                 {% endif %}
+                        </div>    
                         
                             {% elif message.sender != username %}
-            
+                            <div class="sender_user_no">   
+                            <p> {{ message.time }}                                         
+                                <strong>                                              
+                                    <span id='avatar'>{{users_avatars[message.sender] }}</span>                                        
+                                </strong>:                                    
+                            </p>  
+                            
                                 {% if message.morse == 'on' %}
-                                <div style="color:rgb(212, 72, 196);">
-                                    <p> {{ message.time }}
-                                        <strong>  
-                                            <span id='avatar'>{{users_avatars[message.sender] }}</span>
-                                        </strong>:
-                                    </p>
+                                <div class='morse'>
                                     <p> {{ turn_to_morse(message.body) }}</p>
                                 </div>
                         
                                 {% elif message.emoji == 'on' %}
-                                <div style="color:#8D9EC6;">
-                                    <p> {{ message.time }}
-                                        <strong>  
-                                            <span id='avatar'>{{users_avatars[message.sender] }}</span>
-                                        </strong>:
-                                    </p>
+                                <div class='emoji'>
                                     <p> {{ turn_to_emoji(message.body) }}</p>
                                 </div>
                         
                                 {% elif message.braille == 'on' %}
-                                <div style="color:#32E87F;">
-                                    <p> {{ message.time }} 
-                                        <strong>  
-                                            <span id='avatar'>{{users_avatars[message.sender] }}</span>
-                                        </strong>:
-                                    </p>
+                                <div class='braille'>
                                     <p>{{ turn_to_braille(message.body) }}</p>
                                 </div>
                         
                                 {% elif message.binary == 'on' %}
-                                <div style="color:#51D6FF;">
-                                    <p> {{ message.time }}
-                                        <strong>  
-                                            <span id='avatar'>{{users_avatars[message.sender] }}</span>
-                                        </strong>:
-                                    </p>
+                                <div class='binary'>
                                     <p>{{ turn_to_binary(message.body) }}</p>
                                 </div>
                         
                                 {% elif message.important == 'on' %}
-                                <div style="color:red; font: bold;">
-                                    <p> {{ message.time }}
-                                        <strong>  
-                                    {% for key, value in users_avatars.items() %}
-                                    {% if key == message.sender %}
-                                    <span id='avatar'>{{value }}</span>
-                                    {% endif %}
-                                    {% endfor %}
-                                    </strong>:
-                                    </p>
+                                <div class='important'>
                                     <p>{{ message.body }}</p>
                                 </div>
-
+                                
                                 {% else  %}
                                 <div>
-                                    <p> {{ message.time }} 
-                                        <strong>  
-                                            <span id='avatar'>{{users_avatars[message.sender] }}</span>
-                                        </strong>:
-                                    </p>
                                     <p>{{ message.body }}</p>
                                 </div>
                                 {% endif %}
+                            </div>
                             {% endif %} 
                         {% endfor %}
                     </div>
                 </div>
             
                 <div id= 'input'  class="row">
-                    
                     <form class="form-horizontal" method='POST' action='/{{username}}/new'>
                         <div id="features">
                             <div class="row">
@@ -191,9 +142,9 @@
                                     <button type="submit" value="Submit" class="btn btn-success">Send</button>
                                 </div>
                             </div>
-                        
                     </form>
                 </div>
+                
             </div>
         </div>
 </body>

@@ -61,16 +61,27 @@ h4{
 #message_display{
     overflow-y: scroll;
     max-height: 80.8vh;
-    max-width: 74vw;
+    max-width: 64vw;
     margin: 15px;
 }
+.sender_user_no{
+    text-align: left !important;
+}
+.sender_user_yes{
+    text-align: right !important;
+    padding-right: 15px;
+}
+.morse{
+    color:rgb(212, 72, 196);
+}
+
 #imp_buttons{
     background: #B0D0D3;
     text-align: right;
     width: 76.5vw;
     border-bottom: 1px solid #AB8C91;
-    padding-top: 5px;
-    padding-bottom: 5px;
+    padding-top: 10px;
+    padding-bottom: 10px;
     padding-right: 5px;
 }
 .btn.btn-danger{
