@@ -24,6 +24,10 @@ header{
 /*-------------------------------- END OF INDEX HTML --------------------------------*/
 
 /*----------------------------------- CHAT HTML -----------------------------------*/
+.chat_part{
+    padding-right: 0px;
+    width: 76.5vw;
+}
 h3{
     letter-spacing: 5px;
 }
@@ -32,7 +36,7 @@ h3{
 }
 
 #conversation{
-    width: 75.5vw;
+    width: 76.5vw;
 }
 h4{
     background: #FAD3C9;
@@ -63,7 +67,7 @@ h4{
 #imp_buttons{
     background: #B0D0D3;
     text-align: right;
-    width: 75.5vw;
+    width: 76.5vw;
     border-bottom: 1px solid #AB8C91;
     padding-top: 5px;
     padding-bottom: 5px;
@@ -79,9 +83,9 @@ h4{
 #input{
     border-top: 1px solid #AB8C91;
     background: #B0D0D3;
-    width: 75.5vw;
+    width: 76.5vw;
     text-align: center;
-    height: 11.5vh;
+    height: 10.1vh;
     padding-top: 10px;
 }
 #msginput{
@@ -89,13 +93,11 @@ h4{
     margin: 0;
     width: 100%;
 }
-.write{
-    padding-right:0;
+#formGroupInput{
+    width: 98%;
+   
 }
-.send{
-    padding:0;
-    text-align: left;
-}
+
 #features{
     margin-right: 20px;
 }

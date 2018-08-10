@@ -138,7 +138,7 @@ def get_username(username):
             avatars.append(initials)
     
     users_avatars = dict(zip(users, avatars))
-    print(users_avatars)    
+        
     return render_template('chat.html', username=username, all_the_messages=visible_messages, users_avatars=users_avatars)
 
                 

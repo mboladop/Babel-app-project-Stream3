@@ -44,7 +44,7 @@
                                     <p>{{ turn_to_morse(message.body) }}</p>
                                 </div>
                         
-                                {% elif message.type == 'on' %}
+                                {% elif message.emoji == 'on' %}
                                 <div style="color:#8D9EC6; text-align: right; padding-right: 15px;">
                                     <p> {{ message.time }} {{ message.emoji }} <strong>{{ message.sender }}</strong>:</p>
                                     <p>{{ turn_to_emoji(message.body) }}</p>
@@ -83,7 +83,7 @@
                                     <p> {{ turn_to_morse(message.body) }}</p>
                                 </div>
                         
-                                {% elif message.type == 'on' %}
+                                {% elif message.emoji == 'on' %}
                                 <div style="color:#8D9EC6;">
                                     <p> {{ message.time }} {{ message.emoji }}<strong>{{ message.sender }}</strong>:</p>
                                     <p> {{ turn_to_emoji(message.body) }}</p>
@@ -130,16 +130,16 @@
                                 <input class='language_icons' type="checkbox" name="important"> Is it important? 
                             </div>
                         </div>
-                        <div id="msginput">
-                            <div class="row">
-                                <div class="col-sm-11 write">
-                                    <input class="form-control" type="text" name="message" id="formGroupInputLarge" placeholder="Write your message! :)">
+                        
+                            <div id="msginput" class="row">
+                                <div class="col-sm-11">
+                                    <input class="form-control" type="text" name="message" id="formGroupInput" placeholder="Write your message! :)">  
                                 </div>
-                                <div class="col-sm-1 send">    
+                                <div class="col-sm-1">
                                     <button type="submit" value="Submit" class="btn btn-success">Send</button>
                                 </div>
                             </div>
-                        </div> 
+                        
                     </form>
                 </div>
             </div>
