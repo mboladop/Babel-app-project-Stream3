@@ -17,7 +17,7 @@ def get_index():
 def get_login():
     username = request.form.get('username')
     return redirect(username)
-    
+   
 def turn_to_morse(body):
     
     with open('features/morse-code.json') as f:
@@ -125,14 +125,19 @@ def get_username(username):
     messages = load_messages()
     visible_messages=[]
     users=[]
-    
+    avatar=[]
+   
     for message in messages:
         if message['sender'] not in users:
-            users.append( message['sender'])
+            users.append(message['sender'])
         if message['body'].startswith("@"+ username) or not message['body'].startswith("@") or (message['sender'] == username):
             visible_messages.append(message)
+    
+    for user in users:
+            initials = user[0].upper()
+            avatar.append(initials)
         
-    return render_template('chat.html', username=username, all_the_messages=visible_messages, users=users)
+    return render_template('chat.html', username=username, all_the_messages=visible_messages, users=users, avatar=avatar)
 
                 
 @app.route('/<username>/new', methods=['POST'])
