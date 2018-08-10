@@ -14,21 +14,21 @@
 </head>
 
 <body>
-    <div id='chat' class="container">
+    
         <div class="row">
             <div id= 'usernames' class="col-sm-3">
                 
-                <h3> User: @{{ username }} </h3>
+                <h3 id='main_user'> User: @{{ username }} </h3>
 
                 <div id="users" >
-                    {% for user in users %} 
-                    <p><h4> {{ avatar }} {{ user }}</h4></p>
-                    {% endfor %}         
+                    {% for key, value in users_avatars.items() %}
+                    <p><h4><span id='avatar'>{{value}}</span> {{key}}</h4></p>
+                    {% endfor %}
                 </div>
                  
             </div>
             
-            <div class="col-sm-9">
+            <div class="col-sm-9 chat_part">
                 <div id= 'imp_buttons'  class="row">
                         <a href="{{url_for('get_important_messages')}}" class="btn btn-danger">IMPORTANT</a>
                         <a href="{{url_for('get_hashtags')}}" class="btn btn-danger">HASHTAGS</a>
@@ -144,7 +144,6 @@
                 </div>
             </div>
         </div>
-    </div>
 </body>
 
 </html>

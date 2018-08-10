@@ -125,7 +125,7 @@ def get_username(username):
     messages = load_messages()
     visible_messages=[]
     users=[]
-    avatar=[]
+    avatars=[]
    
     for message in messages:
         if message['sender'] not in users:
@@ -135,9 +135,11 @@ def get_username(username):
     
     for user in users:
             initials = user[0].upper()
-            avatar.append(initials)
-        
-    return render_template('chat.html', username=username, all_the_messages=visible_messages, users=users, avatar=avatar)
+            avatars.append(initials)
+    
+    users_avatars = dict(zip(users, avatars))
+    print(users_avatars)    
+    return render_template('chat.html', username=username, all_the_messages=visible_messages, users_avatars=users_avatars)
 
                 
 @app.route('/<username>/new', methods=['POST'])

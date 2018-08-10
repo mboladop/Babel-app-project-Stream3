@@ -27,12 +27,12 @@ header{
 h3{
     letter-spacing: 5px;
 }
-#chat{
-    width: 79vw;
-    margin: 0px;   
+#main_user{
+    text-align: center;
 }
+
 #conversation{
-    width: 80vw;
+    width: 75.5vw;
 }
 h4{
     background: #FAD3C9;
@@ -57,14 +57,17 @@ h4{
 #message_display{
     overflow-y: scroll;
     max-height: 80.8vh;
-    max-width: 80vw;
+    max-width: 74vw;
     margin: 15px;
 }
 #imp_buttons{
     background: #B0D0D3;
     text-align: right;
-    width: 80vw;
+    width: 75.5vw;
     border-bottom: 1px solid #AB8C91;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-right: 5px;
 }
 .btn.btn-danger{
     background: #664751 !important;
@@ -76,7 +79,7 @@ h4{
 #input{
     border-top: 1px solid #AB8C91;
     background: #B0D0D3;
-    width: 80vw;
+    width: 75.5vw;
     text-align: center;
     height: 11.5vh;
     padding-top: 10px;
@@ -96,9 +99,14 @@ h4{
 #features{
     margin-right: 20px;
 }
-
-/*------------------------------- END OF CHAT HTML --------------------------------*/
-
+#avatar{
+    background: lightgrey;
+    color: rgb(44, 44, 44);
+    border-radius: 100%;
+    padding: 5px;
+    text-align: center;
+}
+/*------------------------------- CUSTOM CHECKBOX ------------------------------*/
 
 input.language_icons {
   position: relative;
@@ -131,3 +139,6 @@ input.language_icons:checked::after {
   transform: translateX(100%);
 }
 input.language_icons{ width: 24px; height: 14px; }
+/*------------------------------- END CUSTOM CHECKBOX -----------------------------*/
+
+/*------------------------------- END OF CHAT HTML --------------------------------*/
