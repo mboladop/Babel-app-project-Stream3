@@ -136,7 +136,7 @@ def get_username(username):
     for user in users:
         initials = user[0].upper()
         if len(user) >1:
-            initials += user[1].upper()
+            initials += user[1].lower()
        
         
         avatars.append(initials)
