@@ -1,6 +1,6 @@
 # Babel Chat-app 
 
-![Desktop Demo](https://raw.githubusercontent.com/mboladop/Babel-app-project-Stream3/master/desktop.gif "Desktop Demo")
+![Desktop Demo](https://raw.githubusercontent.com/mboladop/Babel-app-project-Stream3/master/static/desktop.gif "Desktop Demo")
  
 ## Overview
  
@@ -15,8 +15,8 @@ This website uses **Python3** as primary language and **Flask** as the framework
 
 ## UX
 
-![WIREFRAME Desktop Demo](https://raw.githubusercontent.com/mboladop/Babel-app-project-Stream3/master/wireframes/desktop.jpg "Desktop Demo")
-![WIREFRAME Mobile Demo](https://raw.githubusercontent.com/mboladop/Babel-app-project-Stream3/master/wireframes/mobile.jpg "Mobile Demo")
+![WIREFRAME Desktop Demo](https://raw.githubusercontent.com/mboladop/Babel-app-project-Stream3/master/static/wireframes/desktop.jpg "Desktop Demo")
+![WIREFRAME Mobile Demo](https://raw.githubusercontent.com/mboladop/Babel-app-project-Stream3/master/static/wireframes/mobile.jpg "Mobile Demo")
 
 
 ## Features
@@ -53,7 +53,7 @@ This website uses **Python3** as primary language and **Flask** as the framework
 
 ### How the project looks and works on different browsers and screen sizes:
 
-![Responsive Demo](https://raw.githubusercontent.com/mboladop/Babel-app-project-Stream3/master/responsive.gif "Responsive Demo")
+![Responsive Demo](https://raw.githubusercontent.com/mboladop/Babel-app-project-Stream3/master/static/responsive.gif "Responsive Demo")
 
 ### BUGS
 To test it in different devices i started using the console toggle device toolbar, when I fixed all the versions for the different tablets and mobile screens I opened the website  from my Iphone and realised the display was not looking as it should.
