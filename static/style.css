@@ -65,6 +65,11 @@ h4{
     max-width: 74vw;
     margin: 15px;
 }
+.important{
+    font-size: 20px;
+    color:red;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif !important;
+}
 .sender_user_no{
     text-align: left !important;
     font-size: 18px;
@@ -127,6 +132,7 @@ input.language_icons {
   background: #664751;
   outline: 0;
   -webkit-appearance: none;
+  appearance: none; 
   cursor: pointer;
 }
 

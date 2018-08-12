@@ -39,10 +39,9 @@
                         
                         {% if message.sender == username %} 
                         <div class="sender_user_yes">   
-                        <p> {{ message.time }}                                         
-                            <strong>                                              
-                                <span id='avatar'>{{users_avatars[message.sender] }}</span>                                        
-                            </strong>:                                    
+                        <p> 
+                            <strong>{{ message.time }}</strong>                                                                           
+                            <span id='avatar'>{{users_avatars[message.sender]}}</span> :                                    
                         </p>  
                                 {% if message.morse == 'on' %}
                                 <div class='morse'>
@@ -78,10 +77,9 @@
                         
                             {% elif message.sender != username %}
                             <div class="sender_user_no">   
-                            <p> {{ message.time }}                                         
-                                <strong>                                              
-                                    <span id='avatar'>{{users_avatars[message.sender] }}</span>                                        
-                                </strong>:                                    
+                            <p> 
+                                <strong>{{ message.time }}</strong>                                                                           
+                                <span id='avatar'>{{users_avatars[message.sender] }}</span> :                                    
                             </p>  
                                 {% if message.morse == 'on' %}
                                 <div class='morse'>
