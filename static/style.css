@@ -203,7 +203,7 @@ input.language_icons{ width: 24px; height: 14px; }
 /*------------------------------- END CUSTOM CHECKBOX -----------------------------*/
 @media screen and (max-width: 768px) {
     #usernames{
-        height: 20%;
+        height: 15%;
         color: #D0C6D1;
         overflow-y: scroll;
         max-height: 100vh;
@@ -244,7 +244,7 @@ input.language_icons{ width: 24px; height: 14px; }
     
     #message_display{
         overflow-y: scroll;
-        max-height: 61vh;
+        max-height: 49vh;
         width: 100%;
         margin: 15px 20px;
         max-width: 95%;
@@ -268,10 +268,10 @@ input.language_icons{ width: 24px; height: 14px; }
         margin-left: 2px;
 }
     }
-@media screen and (max-width: 1281px) {
+/* @media screen and (max-width: 1281px) {
     #message_display{
-        max-height: 60vh;
+        max-height: 49vh;
     }
-}
+} */
 /*------------------------------- END OF CHAT HTML --------------------------------*/
 

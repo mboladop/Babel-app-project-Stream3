@@ -8,6 +8,12 @@ MONGODB_URI = os.environ.get("MONGODB_URI")
 MONGODB_NAME = os.environ.get("MONGODB_NAME")
 
 app = Flask(__name__)
+class DataStore():
+    users = []
+    avatars = []
+
+data = DataStore()
+# users=[]
 
 @app.route('/')
 def get_index():
@@ -95,25 +101,16 @@ app.jinja_env.globals.update(turn_to_binary=turn_to_binary)
 
 @app.route("/topics/important", )
 def get_important_messages():
-    
+    avatars=[]
     messages = load_messages()
     important_messages = []
-    users=[]
-    avatars=[]
     
     for message in messages:
         if (message['important'] == 'on'):
             important_messages.append(message)
         
-    for user in users:
-        initials = user[0].upper()
-        if len(user) >1:
-            initials += user[1].lower()
-       
-        
-        avatars.append(initials)
     
-    users_avatars = dict(zip(users, avatars))
+    users_avatars = dict(zip(data.users, data.avatars))
     
     return render_template('chat.html', all_the_messages = important_messages, users_avatars=users_avatars)
     
@@ -122,22 +119,14 @@ def get_hashtags():
     
     messages = load_messages()
     chosen_hashtag = []
-    users=[]
-    avatars=[]
+    
     
     for message in messages:
         if ('#') in message["body"]:
             chosen_hashtag.append(message)
         
     
-    for user in users:
-        initials = user[0].upper()
-        if len(user) >1:
-            initials += user[1].lower()
-       
-        avatars.append(initials)
-    
-    users_avatars = dict(zip(users, avatars))
+    users_avatars = dict(zip(data.users, data.avatars))
     return render_template('chat.html', all_the_messages = chosen_hashtag, users_avatars=users_avatars)
 
 @app.route('/<username>')
@@ -145,24 +134,24 @@ def get_username(username):
     
     messages = load_messages()
     visible_messages=[]
-    users=[]
-    avatars=[]
+    # users=[]
+    # avatars=[]
    
     for message in messages:
-        if message['sender'] not in users:
-            users.append(message['sender'])
+        if message['sender'] not in data.users:
+            data.users.append(message['sender'])
         if message['body'].startswith("@"+ username) or not message['body'].startswith("@") or (message['sender'] == username):
             visible_messages.append(message)
     
-    for user in users:
+    for user in data.users:
         initials = user[0].upper()
         if len(user) >1:
             initials += user[1].lower()
        
         
-        avatars.append(initials)
+        data.avatars.append(initials)
     
-    users_avatars = dict(zip(users, avatars))
+    users_avatars = dict(zip(data.users, data.avatars))
         
     return render_template('chat.html', username=username, all_the_messages=visible_messages, users_avatars=users_avatars)
 

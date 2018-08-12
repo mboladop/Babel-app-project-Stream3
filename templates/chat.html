@@ -16,9 +16,11 @@
     
         <div class="row main">
             <div id= 'usernames' class="col-sm-3">
-                
-                <h2 id='main_user'>  <img src="../static/babel-tower.png" alt="chat logo" width='60px'> User: @{{ username }} </h2>
-               
+                {% if username %} 
+                    <h2 id='main_user'>  <img src="../static/babel-tower.png" alt="chat logo" width='60px'> 
+                        User: @{{ username }} 
+                    </h2>
+                {% endif %}
                 <div id="users" >
                     {% for key, value in users_avatars.items() %}
                     <p><h4><span id='avatar'>{{value}}</span> {{ key}}</h4></p>
