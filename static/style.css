@@ -270,7 +270,7 @@ input.language_icons{ width: 24px; height: 14px; }
     }
 @media screen and (max-width: 1281px) {
     #message_display{
-        max-height: 63vh;
+        max-height: 65vh;
     }
 }
 /*------------------------------- END OF CHAT HTML --------------------------------*/
