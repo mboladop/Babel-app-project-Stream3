@@ -1,13 +1,13 @@
 # Babel Chat-app 
 
-![Desktop Demo](https://raw.githubusercontent.com/mboladop/Babel-app-project-Stream3/master/stream3.gif "Desktop Demo")
+![Desktop Demo](https://raw.githubusercontent.com/mboladop/Babel-app-project-Stream3/master/desktop.gif "Desktop Demo")
  
 ## Overview
  
 ### What is this website for?
  
 **Babel Chat-app** Is a free to messenger app for smartphones and desktop and is available for anyone. **Babel Chat-app** uses the internet to send messages. The service is very similar to text messaging services, however, because **Babel Chat-app** uses the internet to send messages, the cost of using **Babel Chat-app** is significantly less than texting. 
-**Babel Chat-app** includes the possibility of turning your messages into different languages such as Braille, Binary code, Emoji or Morse code. It also permits the users to send private messages addressed to specific users, highlight several messages as important or create hashtags.
+**Babel Chat-app** includes the possibility of turning your messages into different languages such as Braille, Binary code, Emoji or Morse code. It also permits the users to send private messages addressed to specific users (@username), highlight several messages as important or create hashtags and be able to view all of the specifically.
  
 ### How does it work?
  
@@ -79,13 +79,14 @@ To fix this I created a specific and new mobile version. For this purpose i down
 ## Credits
 
 ### Media
-- The animated Gifs of the different projects from the [Giphy Capture App](https://giphy.com/apps/giphycapture)
+- The animated Gifs of the different projects are made with the [Giphy Capture App](https://giphy.com/apps/giphycapture)
+- The Icons for the languages are from [Flat Icon Website](https://www.flaticon.com/)
 
 ### Inspiration
 
 - The inspiration used to create this site was from a number of sources:
      - WhatsApp, desktop and mobile vs.
-     - Slack,  desktop and mobile vs.
+     - Slack, desktop and mobile vs.
 
 ## Project Live:
 
