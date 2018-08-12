@@ -19,14 +19,23 @@ header{
     color: #364652;
     font-size: 30px;
     text-align: center;
-    
 }
 /*-------------------------------- END OF INDEX HTML --------------------------------*/
 
 /*----------------------------------- CHAT HTML -----------------------------------*/
+#conversation.row{margin-right: 0px;
+}
+#input.row{margin-right: 0px;
+}
+#imp_buttons.row{margin-right: 0px;
+}
+.row.main{
+    width: 100%;
+    margin: 0px;
+}
 .chat_part{
     padding-right: 0px;
-    width: 76.5vw;
+    
 }
 h2{
     letter-spacing: 5px;
@@ -43,7 +52,7 @@ h3{
 }
 
 #conversation{
-    width: 76.5vw;
+    width: 75.4vw;
 }
 h4{
     background: #D0C6D1;
@@ -66,7 +75,7 @@ h4{
     overflow-y: scroll;
     max-height: 100vh;
 }
-#message_display:
+#message_display{
     overflow-y: scroll;
     max-height: 79.6vh;
     max-width: 74vw;
@@ -89,7 +98,7 @@ h4{
 #imp_buttons{
     background: #C7DBE6;
     text-align: right;
-    width: 76.5vw;
+    width: 75.4vw;
     border-bottom: 1px solid #364652;
     padding-top: 10px;
     padding-bottom: 10px;
@@ -106,10 +115,10 @@ h4{
 #input{
     border-top: 1px solid #364652;
     background: #C7DBE6;
-    width: 76.5vw;
+    width: 75.4vw;
     text-align: center;
     overflow-y: scroll;
-    height: 10.1vh;
+    height: 9.5vh;
     padding-top: 10px;
 }
 #msginput{
