@@ -201,7 +201,7 @@ input.language_icons:checked::after {
 }
 input.language_icons{ width: 24px; height: 14px; }
 /*------------------------------- END CUSTOM CHECKBOX -----------------------------*/
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 768px) {
     #usernames{
         height: 20%;
         color: #D0C6D1;
@@ -268,6 +268,10 @@ input.language_icons{ width: 24px; height: 14px; }
         margin-left: 2px;
 }
     }
-
+@media screen and (max-width: 1281px) {
+    #message_display{
+        max-height: 63vh;
+    }
+}
 /*------------------------------- END OF CHAT HTML --------------------------------*/
 
