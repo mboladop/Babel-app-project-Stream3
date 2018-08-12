@@ -97,27 +97,48 @@ app.jinja_env.globals.update(turn_to_binary=turn_to_binary)
 def get_important_messages():
     
     messages = load_messages()
-    
     important_messages = []
+    users=[]
+    avatars=[]
     
     for message in messages:
         if (message['important'] == 'on'):
             important_messages.append(message)
+        
+    for user in users:
+        initials = user[0].upper()
+        if len(user) >1:
+            initials += user[1].lower()
+       
+        
+        avatars.append(initials)
     
-    return render_template('chat.html', all_the_messages = important_messages)
+    users_avatars = dict(zip(users, avatars))
+    
+    return render_template('chat.html', all_the_messages = important_messages, users_avatars=users_avatars)
     
 @app.route("/topics/hashtag")
 def get_hashtags():
     
     messages = load_messages()
     chosen_hashtag = []
+    users=[]
+    avatars=[]
     
     for message in messages:
         if ('#') in message["body"]:
             chosen_hashtag.append(message)
+        
     
+    for user in users:
+        initials = user[0].upper()
+        if len(user) >1:
+            initials += user[1].lower()
+       
+        avatars.append(initials)
     
-    return render_template('chat.html', all_the_messages = chosen_hashtag)
+    users_avatars = dict(zip(users, avatars))
+    return render_template('chat.html', all_the_messages = chosen_hashtag, users_avatars=users_avatars)
 
 @app.route('/<username>')
 def get_username(username):
