@@ -17,7 +17,7 @@
         <div class="row">
             <div id= 'usernames' class="col-sm-3">
                 
-                <h3 id='main_user'> User: @{{ username }} </h3>
+                <h2 id='main_user'> User: @{{ username }} </h2>
 
                 <div id="users" >
                     {% for key, value in users_avatars.items() %}
@@ -130,10 +130,10 @@
                         </div>
                         
                             <div id="msginput" class="row">
-                                <div class="col-sm-11">
+                                <div class="col-sm-11 write">
                                     <input class="form-control" type="text" name="message" id="formGroupInput" placeholder="Write your message! :)">  
                                 </div>
-                                <div class="col-sm-1">
+                                <div class="col-sm-1 send">
                                     <button type="submit" value="Submit" class="btn btn-success">Send</button>
                                 </div>
                             </div>

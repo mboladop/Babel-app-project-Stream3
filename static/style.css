@@ -8,7 +8,7 @@
 #user_login_title{
     margin-top: 20px;
     font-size: 50px;
-    color: #605754;
+    color: #364652;
     font-family: 'Raleway', sans-serif !important;
     text-align: center;
 }
@@ -16,7 +16,7 @@ header{
     margin: 0px; 
 }
 #userform{
-    color: #605754;
+    color: #364652;
     font-size: 30px;
     text-align: center;
     margin-top: 200px;
@@ -27,6 +27,13 @@ header{
 .chat_part{
     padding-right: 0px;
     width: 76.5vw;
+}
+h2{
+    letter-spacing: 5px;
+    border: 1px #D0C6D1 solid;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin-left: 10px;
 }
 h3{
     letter-spacing: 5px;
@@ -39,8 +46,8 @@ h3{
     width: 76.5vw;
 }
 h4{
-    background: #FAD3C9;
-    color: #664751;
+    background: #D0C6D1;
+    color: #364652;
     text-align: left;
     border-radius: 3%;
     padding: 15px;
@@ -53,9 +60,9 @@ h4{
     margin-top: 100px;
 }
 #usernames{
-    background: #664751;
+    background: #364652;
     height: 100vh;
-    color: #FAD3C9;
+    color: #D0C6D1;
     overflow-y: scroll;
     max-height: 100vh;
 }
@@ -80,24 +87,25 @@ h4{
     font-size: 18px;
 }
 #imp_buttons{
-    background: #B0D0D3;
+    background: #C7DBE6;
     text-align: right;
     width: 76.5vw;
-    border-bottom: 1px solid #AB8C91;
+    border-bottom: 1px solid #364652;
     padding-top: 10px;
     padding-bottom: 10px;
     padding-right: 5px;
 }
 .btn.btn-danger{
-    background: #664751 !important;
-    color: #FAD3C9 !important;
+    background: black !important;
+    color: #D0C6D1 !important;
     letter-spacing: 5px;
-    border-color: red;
+    border-color: #B5BEC6;
+    margin-right: 10px;
    
 }
 #input{
-    border-top: 1px solid #AB8C91;
-    background: #B0D0D3;
+    border-top: 1px solid #364652;
+    background: #C7DBE6;
     width: 76.5vw;
     text-align: center;
     overflow-y: scroll;
@@ -109,6 +117,13 @@ h4{
     margin: 0;
     width: 100%;
 }
+.write{
+    padding: 0;
+}
+.send{
+    padding: 0;
+    text-align: left;
+}
 #formGroupInput{
     width: 98%;  
 }
@@ -116,7 +131,7 @@ h4{
     margin-right: 20px;
 }
 #avatar{
-    background: #B0D0D3;
+    background: #C7DBE6;
     color: rgb(44, 44, 44);
     border-radius: 100%;
     padding: 5px;
@@ -145,7 +160,7 @@ input.language_icons::after {
   width: calc((100% - 4px) / 2);
   height: calc(100% - 4px);
   border-radius: 50%;
-  background: #FAD3C9;
+  background: #D0C6D1;
   transition: all .1s linear;
 }
 
