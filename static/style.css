@@ -244,7 +244,7 @@ input.language_icons{ width: 24px; height: 14px; }
     
     #message_display{
         overflow-y: scroll;
-        max-height: 49vh;
+        max-height: 61vh;
         width: 100%;
         margin: 15px 20px;
         max-width: 95%;
