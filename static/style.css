@@ -23,6 +23,18 @@ header{
 /*-------------------------------- END OF INDEX HTML --------------------------------*/
 
 /*----------------------------------- CHAT HTML -----------------------------------*/
+.sms1{
+    display: inline;
+    border-radius: 20px;
+    background-color: rgb(237, 227, 238);
+    padding: 5px 10px;
+}
+.sms2{
+    display: inline;
+    border-radius: 20px;
+    background-color: rgb(231, 243, 252);
+    padding: 5px 10px;
+}
 #conversation.row{margin-right: 0px;
 }
 #input.row{margin-right: 0px;
@@ -42,7 +54,7 @@ h2{
     border: 1px #D0C6D1 solid;
     padding-top: 10px;
     padding-bottom: 10px;
-    margin-left: 10px;
+    margin-left: 2px;
 }
 h3{
     letter-spacing: 5px;
@@ -86,6 +98,7 @@ h4{
     color:red;
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif !important;
 }
+
 .sender_user_no{
     text-align: left !important;
     font-size: 18px;
@@ -184,3 +197,4 @@ input.language_icons{ width: 24px; height: 14px; }
 /*------------------------------- END CUSTOM CHECKBOX -----------------------------*/
 
 /*------------------------------- END OF CHAT HTML --------------------------------*/
+

@@ -45,32 +45,32 @@
                         </p>  
                                 {% if message.morse == 'on' %}
                                 <div class='morse'>
-                                    <p>{{ turn_to_morse(message.body) }}</p>
+                                    <p class='sms1'>{{ turn_to_morse(message.body) }}</p>
                                 </div>
                         
                                 {% elif message.emoji == 'on' %}
                                 <div class='emoji'>
-                                    <p>{{ turn_to_emoji(message.body) }}</p>
+                                    <p class='sms1'>{{ turn_to_emoji(message.body) }}</p>
                                 </div>
                         
                                 {% elif message.braille == 'on' %}
                                 <div class='braille'>
-                                    <p>{{ turn_to_braille(message.body) }}</p>
+                                    <p class='sms1'>{{ turn_to_braille(message.body) }}</p>
                                 </div>
                         
                                 {% elif message.binary == 'on' %}
                                 <div class='binary'>
-                                    <p>{{ turn_to_binary(message.body) }}</p>
+                                    <p class='sms1'>{{ turn_to_binary(message.body) }}</p>
                                 </div>
                         
                                 {% elif message.important == 'on' %}
                                 <div class='important'>
-                                    <p>{{ message.body }}</p>
+                                    <p class='sms1'>{{ message.body }}</p>
                                 </div>
                                 
                                 {% else  %}
                                 <div >
-                                    <p>{{ message.body }}</p>
+                                    <p class='sms1'>{{ message.body }}</p>
                                 </div>
                                 {% endif %}
                         </div>    
@@ -83,32 +83,32 @@
                             </p>  
                                 {% if message.morse == 'on' %}
                                 <div class='morse'>
-                                    <p> {{ turn_to_morse(message.body) }}</p>
+                                    <p class='sms2'> {{ turn_to_morse(message.body) }}</p>
                                 </div>
                         
                                 {% elif message.emoji == 'on' %}
                                 <div class='emoji'>
-                                    <p> {{ turn_to_emoji(message.body) }}</p>
+                                    <p class='sms2'> {{ turn_to_emoji(message.body) }}</p>
                                 </div>
                         
                                 {% elif message.braille == 'on' %}
                                 <div class='braille'>
-                                    <p>{{ turn_to_braille(message.body) }}</p>
+                                    <p class='sms2'>{{ turn_to_braille(message.body) }}</p>
                                 </div>
                         
                                 {% elif message.binary == 'on' %}
                                 <div class='binary'>
-                                    <p>{{ turn_to_binary(message.body) }}</p>
+                                    <p class='sms2'>{{ turn_to_binary(message.body) }}</p>
                                 </div>
                         
                                 {% elif message.important == 'on' %}
                                 <div class='important'>
-                                    <p>{{ message.body }}</p>
+                                    <p class='sms2'> {{ message.body }}</p>
                                 </div>
                                 
                                 {% else  %}
                                 <div>
-                                    <p>{{ message.body }}</p>
+                                    <p class='sms2'>{{ message.body }}</p>
                                 </div>
                                 {% endif %}
                             </div>
@@ -142,6 +142,10 @@
 
             </div>
         </div>
+        <script>
+            var elem = document.getElementById('message_display');
+                elem.scrollTop = elem.scrollHeight;
+        </script>
 </body>
 
 </html>
