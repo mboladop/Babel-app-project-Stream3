@@ -22,6 +22,7 @@ This website uses **Python3** as primary language and **Flask** as the framework
 ## Features
  
 ### Existing Features
+
 - Simple and clean layout.
 - Easy UX display.
 - Minimal simple Landing.
@@ -40,6 +41,7 @@ This website uses **Python3** as primary language and **Flask** as the framework
     - We use **MongoDB** to store the chats.
 
 ## Testing
+
 - All code used on the site has been tested to ensure everything is working as expected
 - Site viewed and tested in the following browsers:
   - Google Chrome
@@ -52,6 +54,7 @@ This website uses **Python3** as primary language and **Flask** as the framework
   - Samsung Galaxy
 
 ### Manual:
+
 -Important button:
     * Click on the “Important button” button.
     * Check the website displays in a different tab.
@@ -76,11 +79,13 @@ This website uses **Python3** as primary language and **Flask** as the framework
 ![Responsive Demo](https://raw.githubusercontent.com/mboladop/Babel-app-project-Stream3/master/static/responsive.gif "Responsive Demo")
 
 ### BUGS
+
 To test it in different devices i started using the console toggle device toolbar, when I fixed all the versions for the different tablets and mobile screens I opened the website  from my Iphone and realised the display was not looking as it should.
 To fix this I created a specific and new mobile version. For this purpose i downloaded Xcode simulator and served the website via [npm package serve](https://www.npmjs.com/package/serve) to be able to access it instantly and remotely through my own phone.
 
 
 ## Deployment (Heroku)
+
 1. Create workspace in Visual Studio Code.
 2. Associate it with GitHub repository.
 3. Open a new app in Heroku (Europe) choose GitHub as deployment method and choose the repository of your project. This will enable yopur app to be updated with each push you make to Github if you wish.
@@ -96,9 +101,15 @@ To fix this I created a specific and new mobile version. For this purpose i down
   ```git push ```
   - In this case I used a Mongo DB and I was using a bashrc file to store the ```MONGODB_URI``` and ```MONGODB_NAME``` make sure to include these in the Heroku settings Config vars.
 
+### Features Left to Implement
+
+- Flask Login: would provide user session management for Flask. It handles the common tasks of logging in, logging out, and remembering your users’ sessions over extended periods of time.
+  - Include user images for avatars.
+
 ## Contributing
 
 ### Getting the code up and running
+
 1. Firstly you will need to clone this repository by running the ```git clone <project's Github URL>``` command.
 2. After you've done that you'll need to make sure that you have **npm** installed. Link [npm package serve](https://www.npmjs.com/package/serve)
 3. The project will now run locally.
@@ -107,14 +118,17 @@ To fix this I created a specific and new mobile version. For this purpose i down
 ## Credits
 
 ### Media
+
 - The animated Gifs of the different projects are made with the [Giphy Capture App](https://giphy.com/apps/giphycapture)
 - The Icons for the languages are from [Flat Icon Website](https://www.flaticon.com/)
+- The logo image is from [123rf](https://www.123rf.com/)
 
 ### Inspiration
 
 - The inspiration used to create this site was from a number of sources:
      - WhatsApp, desktop and mobile vs.
      - Slack, desktop and mobile vs.
+     - Facebook messenger.
 
 ## Project Live:
 
