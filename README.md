@@ -51,6 +51,26 @@ This website uses **Python3** as primary language and **Flask** as the framework
   - Macbook 13" and 15"
   - Samsung Galaxy
 
+### Manual:
+-Important button:
+    * Click on the “Important button” button.
+    * Check the website displays in a different tab.
+-Hashtag button:
+    * Click on the different ”Hashtag” button.
+    * Check the ethnicity checkboxes display in the search form for each one.
+-Send button:
+    * Click on the different ”Send” buttons in the index and chat HTML.
+    * Check the ethnicity checkboxes display in the search form for each one.
+-Private messages functionality:
+    * Send a @username + message to a specific user of the chat
+    * Check that sender does see te message.
+    * Login as another user (not sender or receiver) check the message doesn´t display.
+    * Login as the user the message was aimed to check the message does display.
+-Checkboxes for different languages:
+    * Write a message for each one of the languages available.
+    * Click on the “Checkbox” of the chosen language you want to turn your message to.
+    * Send message and Verify it siplays in the chosen language.
+
 ### How the project looks and works on different browsers and screen sizes:
 
 ![Responsive Demo](https://raw.githubusercontent.com/mboladop/Babel-app-project-Stream3/master/static/responsive.gif "Responsive Demo")
@@ -60,13 +80,21 @@ To test it in different devices i started using the console toggle device toolba
 To fix this I created a specific and new mobile version. For this purpose i downloaded Xcode simulator and served the website via [npm package serve](https://www.npmjs.com/package/serve) to be able to access it instantly and remotely through my own phone.
 
 
-## Deployment
-1. Navigate to the repository where you're setting up your deployments.
-2. Under your repository name, click Settings.
-3. Go to GitHub Pages section.
-4. Click and choose master branch.
-5. Click save.
-
+## Deployment (Heroku)
+1. Create workspace in Visual Studio Code.
+2. Associate it with GitHub repository.
+3. Open a new app in Heroku (Europe) choose GitHub as deployment method and choose the repository of your project. This will enable yopur app to be updated with each push you make to Github if you wish.
+4. The first time make sure you deploy it manually and then enable automatic deployments choosing master as the branch.
+5. On your project workspace:
+	```pip3 freeze --local > requirements.txt```
+	```sudo pip3 install gunicorn```
+  - Check gunicorn is now in requirements.txt by repeating : 
+  ```pip3 freeze --local > requirements.txt ```
+  ```touch Procfile```           
+  - Open Procfile and paste:               
+    web: gunicorn chat:app
+  ```git push ```
+  - In this case I used a Mongo DB and I was using a bashrc file to store the ```MONGODB_URI``` and ```MONGODB_NAME``` make sure to include these in the Heroku settings Config vars.
 
 ## Contributing
 

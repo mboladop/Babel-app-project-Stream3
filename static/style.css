@@ -33,6 +33,7 @@ header{
 .row.main{
     width: 100%;
     margin: 0px;
+    background-color: #C7DBE6;
 }
 .chat_part{
     padding-right: 0px;
@@ -77,6 +78,7 @@ h4{
 
 #conversation{
     width: 75.4vw;
+    background-color: white !important;
 }
 #message_display{
     overflow-y: scroll;
