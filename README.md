@@ -7,7 +7,7 @@
 ### What is this website for?
  
 **Babel Chat-app** Is a free to messenger app for smartphones and desktop and is available for anyone. This app uses the internet to send messages. The service is very similar to text messaging services, however, because it uses the internet to send messages, the cost of using **Babel Chat-app** is significantly less than texting. 
-**Babel Chat-app** includes the possibility of turning your messages into different languages such as Braille, Binary code, Emoji or Morse code. It also allows the users to send private messages addressed to specific users (@username), highlight several messages as important or create hashtags and be able to view all of the specifically.
+**Babel Chat-app** includes the possibility of turning your messages into different languages such as Braille, Binary code, Emoji or Morse code. It also allows the users to send private messages addressed to specific users (@username), highlight several messages as important or create hashtags and be able to view all of them specifically.
  
 ### How does it work?
  
