@@ -1,6 +1,6 @@
 # Babel Chat-app 
 
-![Desktop Demo](https://raw.githubusercontent.com/mboladop/Babel-app-project-Stream3/master/static/desktop.gif "Desktop Demo")
+![Desktop Demo](https://raw.githubusercontent.com/mboladop/Babel-app-project-Stream3/master/README_files/desktop.gif "Desktop Demo")
  
 ## Overview
  
@@ -15,8 +15,8 @@ This website uses **Python3** as primary language and **Flask** as the framework
 
 ## UX
 
-![WIREFRAME Desktop Demo](https://raw.githubusercontent.com/mboladop/Babel-app-project-Stream3/master/static/wireframes/desktop.jpg "Desktop Demo")
-![WIREFRAME Mobile Demo](https://raw.githubusercontent.com/mboladop/Babel-app-project-Stream3/master/static/wireframes/mobile.jpg "Mobile Demo")
+![WIREFRAME Desktop Demo](https://raw.githubusercontent.com/mboladop/Babel-app-project-Stream3/master/README_files/wireframes/desktop.jpg "Desktop Demo")
+![WIREFRAME Mobile Demo](https://raw.githubusercontent.com/mboladop/Babel-app-project-Stream3/master/README_files/wireframes/mobile.jpg "Mobile Demo")
 
 
 ## Features
