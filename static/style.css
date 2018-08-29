@@ -23,7 +23,9 @@ header{
 /*-------------------------------- END OF INDEX HTML --------------------------------*/
 
 /*----------------------------------- CHAT HTML -----------------------------------*/
-
+#body_chat{
+    background-color: #C7DBE6;
+}
 #conversation.row{margin-right: 0px;
 }
 #input.row{margin-right: 0px;
