@@ -76,7 +76,7 @@ This website uses **Python3** as primary language and **Flask** as the framework
 
 ### How the project looks and works on different browsers and screen sizes:
 
-![Responsive Demo](https://raw.githubusercontent.com/mboladop/Babel-app-project-Stream3/master/static/responsive.gif "Responsive Demo")
+![Responsive Demo](https://raw.githubusercontent.com/mboladop/Babel-app-project-Stream3/master/README_files/responsive.gif "Responsive Demo")
 
 ### BUGS
 
